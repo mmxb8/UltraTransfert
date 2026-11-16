@@ -22,12 +22,12 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y nsis msitools python3-tk xvfb
-          python -m pip install cryptography==50.0.2 zstandard==0.25.0 build
+          python -m pip install cryptography==50.0.2 zstandard==0.25.0
       - name: Run source checks
         run: |
           python -m compileall -q ultra
           python -m unittest discover -s tests -v > source-tests.log 2>&1
-          python -m build --wheel --outdir wheels
+          python -m pip wheel --no-deps --wheel-dir wheels .
       - name: Compile installer from locked inputs
         run: python build_installer.py --output ci-dist
       - uses: actions/upload-artifact@v4
