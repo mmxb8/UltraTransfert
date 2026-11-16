@@ -45,6 +45,30 @@ class EngineTests(unittest.TestCase):
                 self.assertEqual((self.dst/e.path).stat().st_mtime_ns, e.mtime_ns)
         self.assertTrue((self.dst/"dossier vide").is_dir())
 
+    def test_windows_inventory_uses_authoritative_file_identity(self):
+        path = self.write('.cache', b'original')
+        class CachedEntry:
+            name = path.name
+            def __init__(self):
+                self.path = str(path)
+            def stat(self, **kwargs):
+                raise AssertionError('Do not use incomplete Windows DirEntry metadata')
+        class Scan:
+            def __enter__(self):
+                return iter([CachedEntry()])
+            def __exit__(self, *args):
+                return False
+        with patch('ultra.engine.sys.platform', 'win32'), patch('ultra.engine.os.scandir', return_value=Scan()):
+            source = LocalSource(self.src)
+        entry = source.entries[0]
+        self.assertEqual(entry.identity[2:4], (path.lstat().st_dev, path.lstat().st_ino))
+        source.check(entry)
+        with source.open(entry) as stream:
+            self.assertEqual(stream.read(), b'original')
+        path.write_bytes(b'changed size')
+        with self.assertRaises(TransferError):
+            source.check(entry)
+
     def test_many_small_files(self):
         for i in range(250):
             self.write(f"d{i%7}/f{i}", str(i).encode()*10)
