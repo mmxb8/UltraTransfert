@@ -71,7 +71,7 @@ try {
     if (-not $result.shortcuts_created) { throw 'Raccourci absent.' }
     Set-Content -LiteralPath $sentinel -Value 'Conserver ce fichier étranger.' -Encoding UTF8
     $again = Start-Process -FilePath $setup -ArgumentList '/S' -Wait -PassThru
-    if ($again.ExitCode -ne 2 -or -not (Test-Path -LiteralPath $python) -or -not (Test-Path -LiteralPath $sentinel)) { throw 'Protection de l’installation existante incorrecte.' }
+    if ($again.ExitCode -ne 2 -or -not (Test-Path -LiteralPath $python) -or -not (Test-Path -LiteralPath $sentinel)) { throw "Protection de l’installation existante incorrecte." }
     $result.existing_install_refused = $true
     $uninstaller = Join-Path $appBase 'Uninstall.exe'
     # _? conserve le processus dans son répertoire pour que Wait attende sa fin.
