@@ -1,0 +1,37 @@
+UltraTransfert portable — instructions du paquet Windows construit
+
+1. Extraire tout le ZIP dans un dossier personnel.
+2. Ouvrir UltraTransfert.exe. Conserver le dossier _internal à ses côtés.
+3. Choisir le dossier à copier et une destination vide, puis Copier / reprendre.
+4. Attendre « Copie terminée et vérifiée », puis Ouvrir la destination.
+
+Voir le bilan : lire le résultat de cette tentative et les actions proposées.
+Aucune nouvelle vérification ni lecture du disque réseau au clic.
+
+Petit écran : barre verticale ou molette pour atteindre les commandes.
+La navigation au clavier amène le contrôle sélectionné dans la zone visible.
+
+Interrompre : cliquer sur Interrompre et attendre le résultat.
+Reprendre : garder les mêmes dossiers et cliquer sur Reprendre.
+Ne pas supprimer .ultratransfert-state dans la destination.
+
+Python et un terminal ne sont pas nécessaires pour utiliser ce paquet.
+Aucun service ni règle de pare-feu n'est installé.
+Les transferts HTTPS demandent encore une configuration de confiance.
+Le canal RDP natif n'est pas disponible ; les lecteurs redirigés autorisés
+utilisent le parcours de copie de dossiers et restent à tester sur hôte RDP.
+
+Raccourci facultatif : utiliser le menu Windows de l'exécutable pour créer
+un raccourci. Pour mettre à niveau : terminer la copie, fermer l'application,
+extraire la nouvelle version dans un autre dossier et la lancer. Conserver
+les mêmes chemins source/destination pour une reprise compatible ; si l'état
+est refusé, conserver l'ancienne version et suivre son message d'erreur.
+Pour désinstaller : fermer puis supprimer uniquement le dossier de
+l'application et son éventuel raccourci. Les dossiers transférés restent.
+
+Les ACL, flux NTFS alternatifs et attributs étendus ne sont pas conservés.
+Ne pas désactiver les protections Windows ou les politiques RDP.
+
+En cas d’échec d’ouverture de l’interface : suivre le message « lancement impossible ». Un diagnostic est tenté dans le dossier personnel (Windows : %LOCALAPPDATA%\UltraTransfert\diagnostics). Si aucun message n’apparaît, vérifier l’extraction complète et relancer la préparation. Ce mécanisme ne couvre pas un interpréteur ou un bootloader absent. Relire le journal avant de le transmettre ; les diagnostics peuvent être supprimés après fermeture de l’application.
+
+Pour ralentir volontairement une copie : Réglages avancés → Vitesse maximale de copie → choisir une valeur. Sans limite reste le défaut. Pour changer pendant une copie : Interrompre, attendre, modifier puis Reprendre. Il s’agit de contenu logique ; les vérifications et pointes de trafic ne sont pas plafonnées. Aucune réactivité RDP n’est garantie.

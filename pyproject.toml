@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ultratransfert"
+version = "0.4.1"
+description = "Copie de dossiers et réception HTTPS avec reprise et SHA-256"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+sharing = ["cryptography==50.0.2"]
+
+[project.scripts]
+ultratransfert = "ultra.__main__:main"
+
+[tool.setuptools]
+packages = ["ultra"]
+
+[tool.setuptools.package-data]
+ultra = ["assets/*.png", "assets/*.svg", "assets/*.json"]

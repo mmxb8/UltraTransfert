@@ -1,0 +1,10 @@
+{
+  "payload": "bitcoin:3HaGinyFJQJXFAMgU8SBuDxdS5aG5BQUNU",
+  "network": "Bitcoin mainnet",
+  "error_correction": "M",
+  "decoded_with": "zxing-cpp 3.1.1",
+  "sha256": {
+    "bitcoin-donation.png": "14a050849a70130e67a8872065815c125f8ceb51206223c647320b6acb3a31f3",
+    "bitcoin-donation.svg": "53050164273b3a3dcac9497d8f7c50f973fd241a1f20bee80a8de99430f12607"
+  }
+}

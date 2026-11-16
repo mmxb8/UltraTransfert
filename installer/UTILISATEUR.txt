@@ -1,0 +1,43 @@
+UltraTransfert 0.4.0 — installation Windows x64, version bêta
+
+1. Ouvrir UltraTransfert-0.4.0-Setup-x64-beta.exe sur Windows 10/11 x64.
+2. Lire les informations et la licence, puis cliquer sur Installer.
+3. Ouvrir UltraTransfert depuis le menu Démarrer.
+4. Choisir la source, une destination vide, puis Copier / reprendre.
+   Attendre le résultat de la vérification avant de déconnecter la source.
+
+L'installateur contient son moteur Python : aucun Python à installer,
+aucune commande à saisir, aucune connexion Internet nécessaire à l'installation.
+Un contrôle local des fichiers, de l'interface et de la copie/reprise est exécuté
+avant de créer le raccourci et de déclarer l'installation terminée.
+
+Statut : installateur compilé sous Linux, pas encore validé sur un vrai Windows.
+Non signé. Ni Microsoft Defender ni les autres antivirus n'ont été testés ici.
+Une alerte ou un blocage reste possible. Ne désactivez aucune protection.
+Si Windows bloque cette version, conserver le message pour le diagnostic et
+attendre une distribution signée/validée ou l'avis de votre administrateur.
+
+Installation pour le compte courant :
+%LOCALAPPDATA%\Programs\UltraTransfert
+Aucune élévation administrateur, aucun service, tâche de démarrage ou changement
+du pare-feu n'est demandé. Un partage HTTPS démarre seulement à votre demande.
+
+Désinstallation : Paramètres Windows > Applications > UltraTransfert > Désinstaller.
+Fermer l'application avant. Seuls les fichiers connus de cette installation sont
+retirés. Les dossiers transférés, connexions privées et diagnostics personnels
+sont conservés. Ne pas placer vos données dans le dossier géré app.
+
+Mise à niveau : fermer l'application, lancer le nouvel installateur et confirmer
+le remplacement. L'ancienne installation est retirée avant la nouvelle ; ce
+n'est pas une mise à jour transactionnelle avec retour arrière automatique.
+Les fichiers étrangers restants dans app bloquent la réinstallation et sont
+conservés : les déplacer dans un dossier personnel puis recommencer.
+
+Code ouvert sous licence MIT : voir LICENSE et SOURCES.zip dans le dossier app.
+Les bibliothèques tierces conservent leurs licences respectives.
+Dons : bouton Soutenir le projet (Bitcoin), sans paiement automatique.
+BTC, réseau Bitcoin uniquement : 3HaGinyFJQJXFAMgU8SBuDxdS5aG5BQUNU
+
+RDP : les lecteurs redirigés autorisés peuvent être choisis comme dossiers.
+Le canal RDP natif et la reprise entre protocoles ne sont pas livrés.
+Les ACL, flux NTFS alternatifs et attributs étendus ne sont pas conservés.

@@ -1,0 +1,73 @@
+name: Build and validate Windows installer
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: windows-validation-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install build and test tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y nsis msitools python3-tk xvfb
+          python -m pip install cryptography==50.0.2 zstandard==0.25.0 build
+      - name: Run source checks
+        run: |
+          python -m compileall -q ultra
+          python -m unittest discover -s tests -v > source-tests.log 2>&1
+          python -m build --wheel --outdir wheels
+      - name: Compile installer from locked inputs
+        run: python build_installer.py --output ci-dist
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-installer
+          path: ci-dist/*
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: source-checks
+          path: source-tests.log
+  windows:
+    needs: build
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-2022, windows-2025]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: windows-installer
+          path: ci-dist
+      - name: Check installer, embedded runtime, predictive TLS, resume and uninstall
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Path validation-reports | Out-Null
+          $setup = @(Get-ChildItem ci-dist -Filter '*-Setup-x64-beta.exe')
+          if ($setup.Count -ne 1) { throw 'Expected exactly one installer.' }
+          $expected = ((Get-Content ($setup[0].FullName + '.sha256') -Raw) -split '\s+')[0]
+          if ((Get-FileHash $setup[0].FullName -Algorithm SHA256).Hash -ne $expected) { throw 'SHA256 mismatch.' }
+          ./installer/Valider_Windows.ps1 -Installer $setup[0].FullName -Rapport "$PWD/validation-reports/windows.json" -ScannerDefender
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows-evidence-${{ matrix.os }}
+          path: validation-reports/*
+          if-no-files-found: error
+# These jobs never publish a release, sign files, start a public RDP server,
+# or claim that Windows Server tests establish Windows 10/11 or real RDP support.
