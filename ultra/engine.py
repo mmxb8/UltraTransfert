@@ -104,7 +104,10 @@ def inventory(root: Path, exclude_state=False, cancel=None):
                 rel = Path(item.path).relative_to(root).as_posix()
                 if exclude_state and rel == STATE:
                     continue
-                s = item.stat(follow_symlinks=False)
+                # Windows DirEntry.stat may omit the device and file identity.
+                # Use the same authoritative metadata as LocalSource.check/open.
+                s = (os.stat(item.path, follow_symlinks=False) if sys.platform == 'win32'
+                     else item.stat(follow_symlinks=False))
                 if is_link(s):
                     raise TransferError(f"Lien symbolique/jonction non pris en charge : {rel}")
                 if stat.S_ISDIR(s.st_mode):
