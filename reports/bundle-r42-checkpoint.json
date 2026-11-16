@@ -1,0 +1,30 @@
+{
+  "checkpoint": "R4.2",
+  "application_version": "0.4.1",
+  "base_commit": "f95b0023fc2fd0bd187e09c0a4dac3e6a01cdd53",
+  "base_library_version": 28,
+  "tests_passed": 294,
+  "final_tls_copies": 300,
+  "exploratory_tls_copies": 144,
+  "installer_sha256": "01349c32f77356b0e42062eaa7910ca0f5d4adaf9a3d66e6e1ff1382e41ae835",
+  "github_push": false,
+  "github_blocker": "Connector maher8-git permission check 403; browser signed out.",
+  "scope": "Research only; product engine remains f95b002. Downloaded exact Windows-tested installer; not a new build.",
+  "files": {
+    "research/summarize_bundle_r4.py": "e24774c35f58d2c04e2cbc8d42c433eaa47d21e12e7f0165c3d3987e10267382",
+    "research/benchmark_bundle_r4.py": "33102281c00ff0412e183ad1bc304c68e14a5d74f26da983f9df0b83e89b962b",
+    "research/benchmark_manifest_r42.py": "d2690c7fe46ac76aa6eafb718d4e6e8b922f059cb0c76f2ca0525d4fef9d0d40",
+    "research/smallfile_bundle_r41.py": "36538d524c677407ad4298d4d28aeb4e34a24c138d5d3b08a7f0e6b9256dfb9f",
+    "research/benchmark_bundle_r4_core_snapshot.py": "d43e746d6c66eadf45077230f0b21f06df734ca29866dde67aa8b29f96c86eb8",
+    "research/benchmark_bundle_memory.py": "0880ad38af91222bbf52a2b68e198eebd4d2c73149268fed73ee2360b9f9e891",
+    "research/smallfile_bundle.py": "cf04f269454d2d0de1583d21d23b6816046175307120232880ec11d1d89358e5",
+    "research/smallfile_bundle_r40.py": "fb89ef724753619c048d1251e445421859c913b5efa993a0eaea3171fb2bd588",
+    "tests/test_bundle_manifest.py": "75f7f6c6911cf6d8dfcdeb3a1ef60d094011048ceccd4fa8d55f5f6d56eb448c",
+    "tests/test_smallfile_bundle.py": "dbc7f9f43bd48b3b584efb8936d57cdf7d71c93cea8bb2dd03f75045e8c9b667",
+    "reports/bundle-r42-final.json": "9d4aee4ef89d1d0347bf8a21d2b2d89cdbf41c0fffef29376d9e961946aba586",
+    "reports/bundle-r42-exploratory.json": "232014685db5169da4580b1b2004f6c9d101521ac7988eb38b8f353325980cc5",
+    "reports/bundle-r42-decision.md": "1e631f1a730bbce173d2fc4aa062be340c6bd88c9656e6cc4e770f8fc315336a",
+    "reports/manifest-r42-micro.json": "e4783ade3c3fe5e1a321ef77245c477d3a81e7792efcd9ad0090b73b2beaf394",
+    "reports/r42-full-tests-final.txt": "ee228a8ebbae291a4b628b65740323ab4f4bbd76ba969a8a726e23f5791433f2"
+  }
+}

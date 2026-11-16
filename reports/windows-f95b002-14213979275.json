@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "platform": "Windows",
+  "started": "2026-11-16T09:57:38.7746179+00:00",
+  "installer_sha256": "01349c32f77356b0e42062eaa7910ca0f5d4adaf9a3d66e6e1ff1382e41ae835",
+  "signature": "NotSigned",
+  "defender": {
+    "scanned_at": "2026-11-16T09:57:45.2423738+00:00",
+    "status": "scanned",
+    "signature_version": "1.463.256.0",
+    "installed_detections": 0,
+    "detections": 0,
+    "scope": "installer_and_installed_payload"
+  },
+  "predictive": {
+    "status": "passed",
+    "check": "predictive",
+    "native_windows": true,
+    "details": {
+      "files_checked": 35,
+      "resumed_bytes": 65536,
+      "sha256_verified": true,
+      "interruption_and_resume": true,
+      "legacy_client_refused": true,
+      "range_checked": true,
+      "tls_certificate_verified": true,
+      "available_codecs": [
+        "raw",
+        "zlib1"
+      ],
+      "wire_format": "x-ultra-predictive-v1"
+    },
+    "seconds": 15.589080500000023
+  },
+  "existing_install_refused": true,
+  "reinstall_checked": true,
+  "install_exit": 0,
+  "smoke": {
+    "status": "passed",
+    "version": "0.4.1",
+    "platform": "win32",
+    "execution_environment": "windows",
+    "installed": true,
+    "machine": "AMD64",
+    "frozen": false,
+    "gui_created": true,
+    "sharing_prepared": true,
+    "sharing_session_checked": true,
+    "sharing_restore_checked": true,
+    "sha256": "91d3beb88a9b2f778a6c44a1c53b63d3c79931845a9aef84b3fb414610bd1938",
+    "resumed_bytes": 65536,
+    "files": 3,
+    "seconds": 5.249625500000008
+  },
+  "uninstall_exit": 0,
+  "foreign_file_preserved": true,
+  "shortcuts_created": true,
+  "error": null,
+  "rdp_tested": false,
+  "smartscreen_download_tested": false,
+  "windows_edition": "Microsoft Windows Server 2022 Datacenter",
+  "completed": "2026-11-16T09:58:15.2645417+00:00"
+}

@@ -1,0 +1,38 @@
+test_bounds_before_payload_allocation (test_smallfile_bundle.SmallBundleTests.test_bounds_before_payload_allocation) ... ok
+test_corruption_truncation_and_trailing (test_smallfile_bundle.SmallBundleTests.test_corruption_truncation_and_trailing) ... ok
+test_empty_tree_and_empty_files (test_smallfile_bundle.SmallBundleTests.test_empty_tree_and_empty_files) ... ok
+test_https_container_interrupt_resume_and_authentication (test_smallfile_bundle.SmallBundleTests.test_https_container_interrupt_resume_and_authentication) ... ERROR
+test_lzma_expansion_bound (test_smallfile_bundle.SmallBundleTests.test_lzma_expansion_bound) ... ok
+test_malformed_types_and_duplicate_keys (test_smallfile_bundle.SmallBundleTests.test_malformed_types_and_duplicate_keys) ... ok
+test_no_overwrite_or_staging_loss (test_smallfile_bundle.SmallBundleTests.test_no_overwrite_or_staging_loss) ... ok
+test_no_space_rehydration (test_smallfile_bundle.SmallBundleTests.test_no_space_rehydration) ... ok
+test_path_traversal_and_collision (test_smallfile_bundle.SmallBundleTests.test_path_traversal_and_collision) ... ok
+test_rehydration_interrupt_resume_and_conflict (test_smallfile_bundle.SmallBundleTests.test_rehydration_interrupt_resume_and_conflict) ... ok
+test_roundtrip_codecs_and_bounded_groups (test_smallfile_bundle.SmallBundleTests.test_roundtrip_codecs_and_bounded_groups) ... ok
+test_source_changes_are_detected (test_smallfile_bundle.SmallBundleTests.test_source_changes_are_detected) ... ok
+test_source_links_large_files_and_output_inside_source (test_smallfile_bundle.SmallBundleTests.test_source_links_large_files_and_output_inside_source) ... ok
+
+======================================================================
+ERROR: test_https_container_interrupt_resume_and_authentication (test_smallfile_bundle.SmallBundleTests.test_https_container_interrupt_resume_and_authentication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/scratch/e90fa6696e16/project/UltraTransfert-0.4.1/tests/test_smallfile_bundle.py", line 154, in test_https_container_interrupt_resume_and_authentication
+    with self.assertRaises(TransferError): RemoteSource(url,'wrong'*10,cert)
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e90fa6696e16/project/UltraTransfert-0.4.1/ultra/network.py", line 353, in __init__
+    self.payload = self.get_manifest()
+                   ^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e90fa6696e16/project/UltraTransfert-0.4.1/ultra/network.py", line 386, in get_manifest
+    with self.request("/manifest") as response:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e90fa6696e16/project/UltraTransfert-0.4.1/ultra/network.py", line 377, in request
+    return self.pool.request(path, headers)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/e90fa6696e16/project/UltraTransfert-0.4.1/ultra/https_pool.py", line 72, in request
+    raise HTTPError(path, code, reason, result_headers, None)
+urllib.error.HTTPError: HTTP Error 401: Authentification requise
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.133s
+
+FAILED (errors=1)

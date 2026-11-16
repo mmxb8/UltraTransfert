@@ -1,0 +1,119 @@
+{
+  "scope": "Untimed prepacked 32 MiB / 512 distinct seeded pseudo-random files. Decode/group SHA256/file SHA256 and memory index construction included, no network/engine/destination write. Tracemalloc timing adds overhead. RSS process high water includes Python imports/native allocations, Linux isolated processes, 7 repetitions per revision, warm caches.",
+  "summary": [
+    {
+      "revision": "R4.0",
+      "seconds": 0.1566987389996939,
+      "cpu_seconds": 0.15669474500000002,
+      "peak_python_bytes": 67687973,
+      "max_rss_kib": 81808
+    },
+    {
+      "revision": "R4.1",
+      "seconds": 0.12404048299868009,
+      "cpu_seconds": 0.122938477,
+      "peak_python_bytes": 42432869,
+      "max_rss_kib": 57212
+    }
+  ],
+  "raw": [
+    {
+      "revision": "R4.1",
+      "seconds": 0.22544680899954983,
+      "cpu_seconds": 0.22446390700000002,
+      "peak_python_bytes": 42432869,
+      "max_rss_kib": 57212
+    },
+    {
+      "revision": "R4.0",
+      "seconds": 0.2842289809996146,
+      "cpu_seconds": 0.28422218200000005,
+      "peak_python_bytes": 67686147,
+      "max_rss_kib": 81892
+    },
+    {
+      "revision": "R4.0",
+      "seconds": 0.16797709499951452,
+      "cpu_seconds": 0.167973673,
+      "peak_python_bytes": 67687973,
+      "max_rss_kib": 81808
+    },
+    {
+      "revision": "R4.0",
+      "seconds": 0.26904341599947657,
+      "cpu_seconds": 0.26892049100000004,
+      "peak_python_bytes": 67687973,
+      "max_rss_kib": 81816
+    },
+    {
+      "revision": "R4.0",
+      "seconds": 0.12742245799745433,
+      "cpu_seconds": 0.127421916,
+      "peak_python_bytes": 67687915,
+      "max_rss_kib": 81808
+    },
+    {
+      "revision": "R4.1",
+      "seconds": 0.2190877819994057,
+      "cpu_seconds": 0.21908527499999997,
+      "peak_python_bytes": 42432869,
+      "max_rss_kib": 57220
+    },
+    {
+      "revision": "R4.1",
+      "seconds": 0.1126124680013163,
+      "cpu_seconds": 0.11258607399999998,
+      "peak_python_bytes": 42432869,
+      "max_rss_kib": 57212
+    },
+    {
+      "revision": "R4.1",
+      "seconds": 0.12404048299868009,
+      "cpu_seconds": 0.12289746300000001,
+      "peak_python_bytes": 42432869,
+      "max_rss_kib": 57224
+    },
+    {
+      "revision": "R4.0",
+      "seconds": 0.13585939500262612,
+      "cpu_seconds": 0.134106281,
+      "peak_python_bytes": 67687973,
+      "max_rss_kib": 81812
+    },
+    {
+      "revision": "R4.1",
+      "seconds": 0.12018550499851699,
+      "cpu_seconds": 0.120139817,
+      "peak_python_bytes": 42432869,
+      "max_rss_kib": 57212
+    },
+    {
+      "revision": "R4.1",
+      "seconds": 0.22465049699894735,
+      "cpu_seconds": 0.22422662,
+      "peak_python_bytes": 42432869,
+      "max_rss_kib": 57212
+    },
+    {
+      "revision": "R4.1",
+      "seconds": 0.12294245600060094,
+      "cpu_seconds": 0.122938477,
+      "peak_python_bytes": 42432869,
+      "max_rss_kib": 57208
+    },
+    {
+      "revision": "R4.0",
+      "seconds": 0.14720632600074168,
+      "cpu_seconds": 0.14717334399999998,
+      "peak_python_bytes": 67687973,
+      "max_rss_kib": 81808
+    },
+    {
+      "revision": "R4.0",
+      "seconds": 0.1566987389996939,
+      "cpu_seconds": 0.15669474500000002,
+      "peak_python_bytes": 67687973,
+      "max_rss_kib": 81808
+    }
+  ]
+}

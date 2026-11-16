@@ -1,0 +1,198 @@
+{
+  "scope": "4096 immutable Entry records, JSON serialization only; no compression, transport, fsync, reconstruction or verification. Not an end-to-end gain.",
+  "exact_bytes_equal": true,
+  "rows": [
+    {
+      "method": "immutable_fields",
+      "seconds": 0.006363276000001861,
+      "cpu_seconds": 0.006356524000000002,
+      "bytes": 743063
+    },
+    {
+      "method": "immutable_fields",
+      "seconds": 0.006237646000045061,
+      "cpu_seconds": 0.006183306999999999,
+      "bytes": 743063
+    },
+    {
+      "method": "immutable_fields",
+      "seconds": 0.006527068999957919,
+      "cpu_seconds": 0.006528992000000011,
+      "bytes": 743063
+    },
+    {
+      "method": "immutable_fields",
+      "seconds": 0.006738162000033299,
+      "cpu_seconds": 0.006740290999999982,
+      "bytes": 743063
+    },
+    {
+      "method": "recursive_asdict",
+      "seconds": 0.01526143899991439,
+      "cpu_seconds": 0.015263920000000014,
+      "bytes": 743063
+    },
+    {
+      "method": "immutable_fields",
+      "seconds": 0.006344673999933548,
+      "cpu_seconds": 0.006346406999999998,
+      "bytes": 743063
+    },
+    {
+      "method": "recursive_asdict",
+      "seconds": 0.016241317999970306,
+      "cpu_seconds": 0.01624382199999999,
+      "bytes": 743063
+    },
+    {
+      "method": "recursive_asdict",
+      "seconds": 0.016097287999969012,
+      "cpu_seconds": 0.01609982900000001,
+      "bytes": 743063
+    },
+    {
+      "method": "recursive_asdict",
+      "seconds": 0.019653275999985453,
+      "cpu_seconds": 0.019649788,
+      "bytes": 743063
+    },
+    {
+      "method": "recursive_asdict",
+      "seconds": 0.016921210999953473,
+      "cpu_seconds": 0.016923328000000015,
+      "bytes": 743063
+    },
+    {
+      "method": "immutable_fields",
+      "seconds": 0.010232954999992216,
+      "cpu_seconds": 0.010232985,
+      "bytes": 743063
+    },
+    {
+      "method": "recursive_asdict",
+      "seconds": 0.024282427000002826,
+      "cpu_seconds": 0.024285486999999994,
+      "bytes": 743063
+    },
+    {
+      "method": "recursive_asdict",
+      "seconds": 0.022704778000047554,
+      "cpu_seconds": 0.02270739799999999,
+      "bytes": 743063
+    },
+    {
+      "method": "recursive_asdict",
+      "seconds": 0.015345183999897927,
+      "cpu_seconds": 0.01534754100000002,
+      "bytes": 743063
+    },
+    {
+      "method": "recursive_asdict",
+      "seconds": 0.01902292199997646,
+      "cpu_seconds": 0.019025726999999992,
+      "bytes": 743063
+    },
+    {
+      "method": "immutable_fields",
+      "seconds": 0.007215772999984438,
+      "cpu_seconds": 0.007217805999999993,
+      "bytes": 743063
+    },
+    {
+      "method": "recursive_asdict",
+      "seconds": 0.022057332999906976,
+      "cpu_seconds": 0.022060177999999986,
+      "bytes": 743063
+    },
+    {
+      "method": "immutable_fields",
+      "seconds": 0.010079372999939551,
+      "cpu_seconds": 0.010081539000000028,
+      "bytes": 743063
+    },
+    {
+      "method": "immutable_fields",
+      "seconds": 0.008544850000021142,
+      "cpu_seconds": 0.008546894999999999,
+      "bytes": 743063
+    },
+    {
+      "method": "recursive_asdict",
+      "seconds": 0.015662991999988662,
+      "cpu_seconds": 0.015665613000000023,
+      "bytes": 743063
+    },
+    {
+      "method": "immutable_fields",
+      "seconds": 0.006787906999988991,
+      "cpu_seconds": 0.006789994000000021,
+      "bytes": 743063
+    },
+    {
+      "method": "recursive_asdict",
+      "seconds": 0.015493488999936744,
+      "cpu_seconds": 0.015495731999999984,
+      "bytes": 743063
+    },
+    {
+      "method": "immutable_fields",
+      "seconds": 0.00679001799994694,
+      "cpu_seconds": 0.0067918470000000175,
+      "bytes": 743063
+    },
+    {
+      "method": "immutable_fields",
+      "seconds": 0.01059338199991089,
+      "cpu_seconds": 0.010595505000000005,
+      "bytes": 743063
+    },
+    {
+      "method": "recursive_asdict",
+      "seconds": 0.014563350999992508,
+      "cpu_seconds": 0.014565596999999986,
+      "bytes": 743063
+    },
+    {
+      "method": "recursive_asdict",
+      "seconds": 0.014021406000097159,
+      "cpu_seconds": 0.014023557999999992,
+      "bytes": 743063
+    },
+    {
+      "method": "immutable_fields",
+      "seconds": 0.0060754810000389625,
+      "cpu_seconds": 0.0060775379999999934,
+      "bytes": 743063
+    },
+    {
+      "method": "recursive_asdict",
+      "seconds": 0.015880836999940584,
+      "cpu_seconds": 0.015883099999999983,
+      "bytes": 743063
+    },
+    {
+      "method": "immutable_fields",
+      "seconds": 0.00557785800003785,
+      "cpu_seconds": 0.005579380000000023,
+      "bytes": 743063
+    },
+    {
+      "method": "immutable_fields",
+      "seconds": 0.0059594770000330755,
+      "cpu_seconds": 0.005961391999999954,
+      "bytes": 743063
+    }
+  ],
+  "summary": {
+    "recursive_asdict": {
+      "median_seconds": 0.016097287999969012,
+      "median_cpu_seconds": 0.01609982900000001,
+      "peak_python_bytes": 2210143
+    },
+    "immutable_fields": {
+      "median_seconds": 0.006738162000033299,
+      "median_cpu_seconds": 0.006740290999999982,
+      "peak_python_bytes": 2209943
+    }
+  }
+}

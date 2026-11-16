@@ -1,0 +1,12 @@
+test_bad_option_never_publishes (test_bundle_manifest.ManifestTests.test_bad_option_never_publishes) ... ok
+test_bombs_sizes_unknown_codec_and_truncation (test_bundle_manifest.ManifestTests.test_bombs_sizes_unknown_codec_and_truncation) ... ok
+test_checksum_and_raw_size (test_bundle_manifest.ManifestTests.test_checksum_and_raw_size) ... ok
+test_compressed_manifest_keeps_path_and_duplicate_checks (test_bundle_manifest.ManifestTests.test_compressed_manifest_keeps_path_and_duplicate_checks) ... ok
+test_identity_compatibility_and_verified_restore (test_bundle_manifest.ManifestTests.test_identity_compatibility_and_verified_restore) ... ok
+test_roundtrip_formats_and_raw_fallback (test_bundle_manifest.ManifestTests.test_roundtrip_formats_and_raw_fallback) ... ok
+test_trailing_concatenated_and_invalid_streams (test_bundle_manifest.ManifestTests.test_trailing_concatenated_and_invalid_streams) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.075s
+
+OK

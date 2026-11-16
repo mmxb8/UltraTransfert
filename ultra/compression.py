@@ -45,7 +45,8 @@ class Zstd:
     def compress(self, data, level):
         out=C.create_string_buffer(self.lib.ZSTD_compressBound(len(data)))
         n=self.checked(self.lib.ZSTD_compress(out,len(out),data,len(data),level))
-        return out.raw[:n]
+        # Read only the written bytes; out.raw copies the entire capacity first.
+        return C.string_at(out,n)
 
     def decompress(self, data, size):
         if self.checked(self.lib.ZSTD_findFrameCompressedSize(data,len(data)))!=len(data):
@@ -54,7 +55,7 @@ class Zstd:
         n=self.checked(self.lib.ZSTD_decompress(out,size,data,len(data)))
         if n!=size:
             raise CodecError('Longueur Zstandard incorrecte')
-        return out.raw[:n]
+        return C.string_at(out,n)
 
 
 try:

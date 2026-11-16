@@ -1,0 +1,11 @@
+Microbenchmarks completed
+HTTPS 20/180 verified
+HTTPS 40/180 verified
+HTTPS 60/180 verified
+HTTPS 80/180 verified
+HTTPS 100/180 verified
+HTTPS 120/180 verified
+HTTPS 140/180 verified
+HTTPS 160/180 verified
+HTTPS 180/180 verified
+Saved reports/frame-cost-20261116.json: 288 CPU roundtrips, 180 TLS copies

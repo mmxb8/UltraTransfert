@@ -1,0 +1,12 @@
+test_all_codecs_same_wire_bytes_as_reference (test_bundle_spool.SpoolTests.test_all_codecs_same_wire_bytes_as_reference) ... ok
+test_empty_snapshot_and_option_validation (test_bundle_spool.SpoolTests.test_empty_snapshot_and_option_validation) ... ok
+test_identity_index_rejects_forged_entry_fields (test_bundle_spool.SpoolTests.test_identity_index_rejects_forged_entry_fields) ... ok
+test_source_changed_during_spooling_is_rejected (test_bundle_spool.SpoolTests.test_source_changed_during_spooling_is_rejected) ... ok
+test_spool_disk_failure_does_not_publish_or_remove_old_output (test_bundle_spool.SpoolTests.test_spool_disk_failure_does_not_publish_or_remove_old_output) ... ok
+test_spool_final_copy_error_cleans_only_own_temporary (test_bundle_spool.SpoolTests.test_spool_final_copy_error_cleans_only_own_temporary) ... ok
+test_spool_rejects_output_inside_source_and_keeps_existing_part (test_bundle_spool.SpoolTests.test_spool_rejects_output_inside_source_and_keeps_existing_part) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.864s
+
+OK

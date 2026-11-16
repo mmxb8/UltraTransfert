@@ -1,7 +1,12 @@
 # UltraTransfert
 
 Logiciel open source de transfert de fichiers avec reprise après interruption et
-vérification SHA-256. Version **0.4.1 bêta**, licence [MIT](LICENSE).
+vérification SHA-256. Version source **0.4.2 bêta**, licence [MIT](LICENSE).
+
+La 0.4.2 réduit des copies mémoire et un hachage redondant, avec les mêmes formats
+et vérifications. Les nouveaux octets attendent leur validation Windows : la
+dernière validation Windows Server réussie concerne la 0.4.1 au commit `f95b002`.
+Mesures et limites : [coût des trames](RECHERCHE_TRAMES_042.md).
 
 ## Fonctions
 

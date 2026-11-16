@@ -54,10 +54,11 @@ def predict(data, width, kind, inverse=False, *, inversion='division'):
     return x.to_bytes(length, 'little')+data[length:]
 
 
-def _prefix(data, recipe):
+def _prefix(data, recipe, sha256=None):
     codec, width, predictor = recipe
     h = json.dumps({'size':len(data), 'codec':codec, 'width':width,
-                    'predictor':predictor, 'sha256':hashlib.sha256(data).hexdigest()},
+                    'predictor':predictor,
+                    'sha256':hashlib.sha256(data).hexdigest() if sha256 is None else sha256},
                    sort_keys=True, separators=(',', ':')).encode()
     return MAGIC+struct.pack('!I',len(h))+h
 
@@ -69,12 +70,16 @@ def frame(data, recipe=('raw', 1, 'none'), *, fallback=True):
     if codec not in ('raw', 'zlib1', 'zstd1', 'zstd3'):
         raise CodecError('Invalid codec')
     transformed = shuffle(predict(data, width, predictor), width)
-    result = _prefix(data, recipe)+compress(transformed, codec)
+    payload = compress(transformed, codec)
+    # Hash the original bytes once, including when a recipe expands and falls
+    # back to raw. Compare complete frame sizes before joining a large payload.
+    sha256 = hashlib.sha256(data).hexdigest()
+    prefix = _prefix(data, recipe, sha256)
     if fallback and recipe != ('raw', 1, 'none'):
-        raw_prefix = _prefix(data, ('raw', 1, 'none'))
-        if len(result) > len(raw_prefix)+len(data):
+        raw_prefix = _prefix(data, ('raw', 1, 'none'), sha256)
+        if len(prefix)+len(payload) > len(raw_prefix)+len(data):
             return raw_prefix+data
-    return result
+    return prefix+payload
 
 
 def header(data):

@@ -1,0 +1,7849 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "zstd_version": "1.5.7",
+  "reference_commit": "f95b0023fc2fd0bd187e09c0a4dac3e6a01cdd53",
+  "dataset_sha256": {
+    "random": "9f0778686f4aa620005ad2b9d76d7411a6467b98e94e7598136371070617754d",
+    "repeated": "e89d8d743b59306ba100a733852bc4d380949e60260a06acfed8ed370b0c870f",
+    "float32": "68c04270d9f5beabc446a96837a81e94697d64653ee20c4a0d21868bad3c317e",
+    "stdlib": "53656442ec8892edbb2cb7d567e65694da30bece7ea11c0a2ff104665bf96e90"
+  },
+  "dataset_bytes": {
+    "random": 4194304,
+    "repeated": 4194304,
+    "float32": 4194304,
+    "stdlib": 4194304
+  },
+  "scope": "Linux warm caches. Micro time includes encode+decode; memory is encode-only Python traced peak, excluding native codec workspaces and input. TLS is authenticated loopback, one worker, 2-MiB prefixes, capped per connection at 50/1000 Mbps in 16-KiB writes; includes inventory/hash/server setup/client TLS/codec/destination fsync/final engine checks, excludes fixtures, certificate generation, shutdown and extra independent hash. No physical network, Windows, RDP, representative corpus or market-wide superiority. Before/after adaptive choices depend on timing; fixed zlib comparison isolates frame changes and matches the codec available in the bundled Windows runtime. none/gzip are existing transport references. Before uses frozen frame/buffer routines at reference commit; all SHA256 and stream checks retained. Jobs randomized; raw samples and regressions retained.",
+  "micro_summary": [
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "samples": 9,
+      "median_seconds": 0.12467320300038409,
+      "median_cpu_seconds": 0.12198708300000005,
+      "median_frame_bytes": 598,
+      "min_seconds": 0.09280607300024712,
+      "max_seconds": 0.3131285250001383
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "samples": 9,
+      "median_seconds": 0.009105935000661702,
+      "median_cpu_seconds": 0.009107326000000082,
+      "median_frame_bytes": 4194448,
+      "min_seconds": 0.007463083999937226,
+      "max_seconds": 0.03503078099947743
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "samples": 9,
+      "median_seconds": 0.14951195100002224,
+      "median_cpu_seconds": 0.14951183300000004,
+      "median_frame_bytes": 4194448,
+      "min_seconds": 0.12983791300030134,
+      "max_seconds": 0.31810690599922964
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "samples": 9,
+      "median_seconds": 0.14985124800023186,
+      "median_cpu_seconds": 0.14985398500000002,
+      "median_frame_bytes": 2400661,
+      "min_seconds": 0.13634844700027315,
+      "max_seconds": 0.1824455920004766
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "samples": 9,
+      "median_seconds": 0.008654648999254277,
+      "median_cpu_seconds": 0.008654294999999479,
+      "median_frame_bytes": 4194448,
+      "min_seconds": 0.00772550500005309,
+      "max_seconds": 0.020492056999501074
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "samples": 9,
+      "median_seconds": 0.04557285699956992,
+      "median_cpu_seconds": 0.04557478799999992,
+      "median_frame_bytes": 4194448,
+      "min_seconds": 0.03675339300025371,
+      "max_seconds": 0.12350869599958969
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "samples": 9,
+      "median_seconds": 0.009153774999504094,
+      "median_cpu_seconds": 0.009153763000000481,
+      "median_frame_bytes": 4194448,
+      "min_seconds": 0.008170300000529096,
+      "max_seconds": 0.02412311399984901
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "samples": 9,
+      "median_seconds": 0.15527027900043322,
+      "median_cpu_seconds": 0.15528025700000003,
+      "median_frame_bytes": 3008818,
+      "min_seconds": 0.14635712200015405,
+      "max_seconds": 0.5520482179999817
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "samples": 9,
+      "median_seconds": 0.008494641999277519,
+      "median_cpu_seconds": 0.008495373999999778,
+      "median_frame_bytes": 4194448,
+      "min_seconds": 0.00744463299997733,
+      "max_seconds": 0.013521556999876339
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "samples": 9,
+      "median_seconds": 0.13296599100067397,
+      "median_cpu_seconds": 0.13295561999999972,
+      "median_frame_bytes": 754530,
+      "min_seconds": 0.11488821900002222,
+      "max_seconds": 0.34451688099943567
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "samples": 9,
+      "median_seconds": 0.13044422999973904,
+      "median_cpu_seconds": 0.13042035399999996,
+      "median_frame_bytes": 754530,
+      "min_seconds": 0.1198566960001699,
+      "max_seconds": 0.14939666099962778
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "samples": 9,
+      "median_seconds": 0.15889029599929927,
+      "median_cpu_seconds": 0.15887021700000048,
+      "median_frame_bytes": 3008818,
+      "min_seconds": 0.1419377069996699,
+      "max_seconds": 0.29940768999949796
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "samples": 9,
+      "median_seconds": 0.011422372999732033,
+      "median_cpu_seconds": 0.011424692999998598,
+      "median_frame_bytes": 570,
+      "min_seconds": 0.010646986000210745,
+      "max_seconds": 0.039851425999586354
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "samples": 9,
+      "median_seconds": 0.023692174000643718,
+      "median_cpu_seconds": 0.023694992999999887,
+      "median_frame_bytes": 22584,
+      "min_seconds": 0.020441896000193083,
+      "max_seconds": 0.1253664400001071
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "samples": 9,
+      "median_seconds": 0.03183289199932915,
+      "median_cpu_seconds": 0.03183492400000176,
+      "median_frame_bytes": 22584,
+      "min_seconds": 0.023731932999908167,
+      "max_seconds": 0.07428626499950042
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "samples": 9,
+      "median_seconds": 0.009837288000198896,
+      "median_cpu_seconds": 0.009838664000000108,
+      "median_frame_bytes": 4194448,
+      "min_seconds": 0.007050477000120736,
+      "max_seconds": 0.036833565999586426
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "samples": 9,
+      "median_seconds": 0.037906305999968026,
+      "median_cpu_seconds": 0.0379088199999984,
+      "median_frame_bytes": 1182962,
+      "min_seconds": 0.03325078800025949,
+      "max_seconds": 0.09271698799966543
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "samples": 9,
+      "median_seconds": 0.012711247999504849,
+      "median_cpu_seconds": 0.012713729000000562,
+      "median_frame_bytes": 4194448,
+      "min_seconds": 0.011511321999932989,
+      "max_seconds": 0.023636531000192917
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "samples": 9,
+      "median_seconds": 0.13357854100013355,
+      "median_cpu_seconds": 0.13349844000000033,
+      "median_frame_bytes": 2308984,
+      "min_seconds": 0.12128923799991753,
+      "max_seconds": 0.2764080790002481
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "samples": 9,
+      "median_seconds": 0.15071647700005997,
+      "median_cpu_seconds": 0.14998915600000018,
+      "median_frame_bytes": 2400661,
+      "min_seconds": 0.1409112470000764,
+      "max_seconds": 0.40686719799941784
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "samples": 9,
+      "median_seconds": 0.009576154999194841,
+      "median_cpu_seconds": 0.009576759999999851,
+      "median_frame_bytes": 4194448,
+      "min_seconds": 0.007186899999396701,
+      "max_seconds": 0.012383884000882972
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "samples": 9,
+      "median_seconds": 0.044076615999983915,
+      "median_cpu_seconds": 0.04407868000000015,
+      "median_frame_bytes": 4194448,
+      "min_seconds": 0.03648532300030638,
+      "max_seconds": 0.1327084360000299
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "samples": 9,
+      "median_seconds": 0.01915364900014538,
+      "median_cpu_seconds": 0.019153933000000123,
+      "median_frame_bytes": 4194448,
+      "min_seconds": 0.013802280000163591,
+      "max_seconds": 0.024737194000408635
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "samples": 9,
+      "median_seconds": 0.010716212999795971,
+      "median_cpu_seconds": 0.01071720200000037,
+      "median_frame_bytes": 4194448,
+      "min_seconds": 0.007366599999841128,
+      "max_seconds": 0.020282643999962602
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "samples": 9,
+      "median_seconds": 0.11060985099993559,
+      "median_cpu_seconds": 0.11058328199999945,
+      "median_frame_bytes": 598,
+      "min_seconds": 0.10538474999975733,
+      "max_seconds": 0.24508550299924536
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "samples": 9,
+      "median_seconds": 0.03267255300033867,
+      "median_cpu_seconds": 0.02714821700000014,
+      "median_frame_bytes": 3815992,
+      "min_seconds": 0.023006096000244725,
+      "max_seconds": 0.06916544900013832
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "samples": 9,
+      "median_seconds": 0.008141140999214258,
+      "median_cpu_seconds": 0.008142034999999659,
+      "median_frame_bytes": 4194448,
+      "min_seconds": 0.007290771999578283,
+      "max_seconds": 0.012622692000149982
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "samples": 9,
+      "median_seconds": 0.14426845199977834,
+      "median_cpu_seconds": 0.14426904799999818,
+      "median_frame_bytes": 4194448,
+      "min_seconds": 0.13179897200006963,
+      "max_seconds": 0.3141345869998986
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "samples": 9,
+      "median_seconds": 0.1400904399997671,
+      "median_cpu_seconds": 0.14009127399999954,
+      "median_frame_bytes": 2308984,
+      "min_seconds": 0.1266272660004688,
+      "max_seconds": 0.2819240130002072
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "samples": 9,
+      "median_seconds": 0.03073544499966374,
+      "median_cpu_seconds": 0.030737003000000485,
+      "median_frame_bytes": 3815992,
+      "min_seconds": 0.025509955000416085,
+      "max_seconds": 0.09980037399964203
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "samples": 9,
+      "median_seconds": 0.03225841799940099,
+      "median_cpu_seconds": 0.03226068099999946,
+      "median_frame_bytes": 1182962,
+      "min_seconds": 0.025877512999613828,
+      "max_seconds": 0.08569277399965358
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "samples": 9,
+      "median_seconds": 0.017330245000266586,
+      "median_cpu_seconds": 0.017331112000000815,
+      "median_frame_bytes": 570,
+      "min_seconds": 0.014455753000220284,
+      "max_seconds": 0.040377356999670155
+    }
+  ],
+  "micro_raw": [
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 7,
+      "seconds": 0.11022766800033423,
+      "cpu_seconds": 0.11021641599999998,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 2,
+      "seconds": 0.010691116999623773,
+      "cpu_seconds": 0.010692307000000012,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 7,
+      "seconds": 0.14744200099994487,
+      "cpu_seconds": 0.147451479,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 1,
+      "seconds": 0.13634844700027315,
+      "cpu_seconds": 0.13633085599999994,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 0,
+      "seconds": 0.008037768000576762,
+      "cpu_seconds": 0.008039270000000043,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 7,
+      "seconds": 0.04588389999935316,
+      "cpu_seconds": 0.04588674800000003,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 1,
+      "seconds": 0.14951195100002224,
+      "cpu_seconds": 0.14951183300000004,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 0,
+      "seconds": 0.01119102299981023,
+      "cpu_seconds": 0.011190226999999942,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 8,
+      "seconds": 0.15527027900043322,
+      "cpu_seconds": 0.15528025700000003,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 8,
+      "seconds": 0.010265031999551866,
+      "cpu_seconds": 0.010265855999999962,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 6,
+      "seconds": 0.12795151800037274,
+      "cpu_seconds": 0.12795957899999988,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 2,
+      "seconds": 0.12286767699970369,
+      "cpu_seconds": 0.12287597400000005,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 8,
+      "seconds": 0.04557285699956992,
+      "cpu_seconds": 0.04557478799999992,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 5,
+      "seconds": 0.1759833569994953,
+      "cpu_seconds": 0.17155627000000018,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 3,
+      "seconds": 0.010843821999515058,
+      "cpu_seconds": 0.010844279999999928,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 8,
+      "seconds": 0.02264150399969367,
+      "cpu_seconds": 0.022643179999999985,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 5,
+      "seconds": 0.024734038999667973,
+      "cpu_seconds": 0.024736233999999913,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 8,
+      "seconds": 0.008515660999364627,
+      "cpu_seconds": 0.008516310000000082,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 4,
+      "seconds": 0.037462745999619074,
+      "cpu_seconds": 0.037407963999999794,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 8,
+      "seconds": 0.011391841999284225,
+      "cpu_seconds": 0.011320689000000161,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 4,
+      "seconds": 0.02143681400048081,
+      "cpu_seconds": 0.02143874900000009,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 8,
+      "seconds": 0.011511321999932989,
+      "cpu_seconds": 0.011512594000000043,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 3,
+      "seconds": 0.12351147099980153,
+      "cpu_seconds": 0.12351066300000024,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 3,
+      "seconds": 0.007475064000573184,
+      "cpu_seconds": 0.00747636500000004,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 2,
+      "seconds": 0.00744463299997733,
+      "cpu_seconds": 0.007445420999999897,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 1,
+      "seconds": 0.11680626399993344,
+      "cpu_seconds": 0.11680754399999982,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 1,
+      "seconds": 0.029272843999933684,
+      "cpu_seconds": 0.029273895000000216,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 4,
+      "seconds": 0.14913114499995572,
+      "cpu_seconds": 0.14913920700000016,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 0,
+      "seconds": 0.007667001999834611,
+      "cpu_seconds": 0.007668724000000182,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 3,
+      "seconds": 0.10046726499967917,
+      "cpu_seconds": 0.1004752550000001,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 8,
+      "seconds": 0.03979032500046742,
+      "cpu_seconds": 0.03979443700000029,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 1,
+      "seconds": 0.01610875999995187,
+      "cpu_seconds": 0.016109512999999964,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 0,
+      "seconds": 0.024737194000408635,
+      "cpu_seconds": 0.024737907000000003,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 8,
+      "seconds": 0.009246444999917003,
+      "cpu_seconds": 0.009246155000000034,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 5,
+      "seconds": 0.1075868679999985,
+      "cpu_seconds": 0.10758328600000011,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 3,
+      "seconds": 0.11420441100017342,
+      "cpu_seconds": 0.11395219299999981,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 0,
+      "seconds": 0.009837288000198896,
+      "cpu_seconds": 0.009838664000000108,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 3,
+      "seconds": 0.023692174000643718,
+      "cpu_seconds": 0.023694992999999887,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 3,
+      "seconds": 0.02491832699979568,
+      "cpu_seconds": 0.02491969900000024,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 8,
+      "seconds": 0.023731932999908167,
+      "cpu_seconds": 0.023734789999999784,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 1,
+      "seconds": 0.009105935000661702,
+      "cpu_seconds": 0.009107326000000082,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 6,
+      "seconds": 0.007575314999485272,
+      "cpu_seconds": 0.007576020000000128,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 8,
+      "seconds": 0.15930899700015289,
+      "cpu_seconds": 0.15929966699999998,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 4,
+      "seconds": 0.03327551900019898,
+      "cpu_seconds": 0.02714821700000014,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 6,
+      "seconds": 0.03979273099957936,
+      "cpu_seconds": 0.03978771400000003,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 8,
+      "seconds": 0.14193633299964858,
+      "cpu_seconds": 0.14185985800000012,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 2,
+      "seconds": 0.00902766800027166,
+      "cpu_seconds": 0.009027538000000224,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 5,
+      "seconds": 0.14635712200015405,
+      "cpu_seconds": 0.14636707500000012,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 1,
+      "seconds": 0.012140425999859872,
+      "cpu_seconds": 0.01214233000000009,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 4,
+      "seconds": 0.13179897200006963,
+      "cpu_seconds": 0.13180716700000028,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 7,
+      "seconds": 0.013802280000163591,
+      "cpu_seconds": 0.01380319200000013,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 2,
+      "seconds": 0.009277056000428274,
+      "cpu_seconds": 0.00927750000000005,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 5,
+      "seconds": 0.011191212999619893,
+      "cpu_seconds": 0.011192230000000247,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 4,
+      "seconds": 0.009381163000398374,
+      "cpu_seconds": 0.009380825000000037,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 0,
+      "seconds": 0.12467320300038409,
+      "cpu_seconds": 0.12198708300000005,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 0,
+      "seconds": 0.14705638100076612,
+      "cpu_seconds": 0.14705847400000005,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 0,
+      "seconds": 0.04102610799964168,
+      "cpu_seconds": 0.041018402999999815,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 3,
+      "seconds": 0.008165662999999768,
+      "cpu_seconds": 0.008167373000000033,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 2,
+      "seconds": 0.1266272660004688,
+      "cpu_seconds": 0.12662774800000065,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 5,
+      "seconds": 0.12581954100005532,
+      "cpu_seconds": 0.12581194699999987,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 7,
+      "seconds": 0.15008427100019617,
+      "cpu_seconds": 0.14998915600000018,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 6,
+      "seconds": 0.008494641999277519,
+      "cpu_seconds": 0.008495373999999778,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 8,
+      "seconds": 0.030152129999805766,
+      "cpu_seconds": 0.030154363000000295,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 2,
+      "seconds": 0.010716212999795971,
+      "cpu_seconds": 0.01071720200000037,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 8,
+      "seconds": 0.12128923799991753,
+      "cpu_seconds": 0.12129645999999994,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 4,
+      "seconds": 0.008236349999606318,
+      "cpu_seconds": 0.008236172999999347,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 3,
+      "seconds": 0.008141140999214258,
+      "cpu_seconds": 0.008142034999999659,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 2,
+      "seconds": 0.009898387000248476,
+      "cpu_seconds": 0.00989927099999921,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 4,
+      "seconds": 0.009305097999458667,
+      "cpu_seconds": 0.009306207999999927,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 1,
+      "seconds": 0.15629264099970896,
+      "cpu_seconds": 0.15629519700000039,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 2,
+      "seconds": 0.03225841799940099,
+      "cpu_seconds": 0.03226068099999946,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 6,
+      "seconds": 0.13044422999973904,
+      "cpu_seconds": 0.13042035399999996,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 0,
+      "seconds": 0.026460791999852518,
+      "cpu_seconds": 0.026462485999999785,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 4,
+      "seconds": 0.027270489999864367,
+      "cpu_seconds": 0.02727351099999975,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 8,
+      "seconds": 0.034335852000367595,
+      "cpu_seconds": 0.03429713400000001,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 5,
+      "seconds": 0.0212925499999983,
+      "cpu_seconds": 0.021293571000000178,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 7,
+      "seconds": 0.14696820300014224,
+      "cpu_seconds": 0.1469214050000005,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 3,
+      "seconds": 0.044076615999983915,
+      "cpu_seconds": 0.04407868000000015,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 8,
+      "seconds": 0.19263631099966005,
+      "cpu_seconds": 0.19263901299999997,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 8,
+      "seconds": 0.14772181899934367,
+      "cpu_seconds": 0.147729848,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 7,
+      "seconds": 0.013055296000857197,
+      "cpu_seconds": 0.013056577999999597,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 5,
+      "seconds": 0.13239927500035265,
+      "cpu_seconds": 0.1324084670000003,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 4,
+      "seconds": 0.14391872299984243,
+      "cpu_seconds": 0.14278975700000007,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 7,
+      "seconds": 0.1234379910001735,
+      "cpu_seconds": 0.12332003800000013,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 4,
+      "seconds": 0.045657241999833786,
+      "cpu_seconds": 0.045649300000000004,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 4,
+      "seconds": 0.012711247999504849,
+      "cpu_seconds": 0.012713729000000562,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 8,
+      "seconds": 0.0408570569998119,
+      "cpu_seconds": 0.040787449999999836,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 7,
+      "seconds": 0.008049101999858976,
+      "cpu_seconds": 0.008049687999999833,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 7,
+      "seconds": 0.11060985099993559,
+      "cpu_seconds": 0.11058328199999945,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 3,
+      "seconds": 0.009576154999194841,
+      "cpu_seconds": 0.009576759999999851,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 4,
+      "seconds": 0.008051984000303491,
+      "cpu_seconds": 0.008053048000000729,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 2,
+      "seconds": 0.012316551999902003,
+      "cpu_seconds": 0.012317751000000321,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 3,
+      "seconds": 0.13296599100067397,
+      "cpu_seconds": 0.13295561999999972,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 0,
+      "seconds": 0.254938616999425,
+      "cpu_seconds": 0.2549538020000002,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 7,
+      "seconds": 0.15602942199984682,
+      "cpu_seconds": 0.15603807599999975,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 2,
+      "seconds": 0.12983791300030134,
+      "cpu_seconds": 0.129827723,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 6,
+      "seconds": 0.10668777799946838,
+      "cpu_seconds": 0.1066938749999995,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 6,
+      "seconds": 0.15205349900043075,
+      "cpu_seconds": 0.15190194000000012,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 6,
+      "seconds": 0.01915364900014538,
+      "cpu_seconds": 0.019153933000000123,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 7,
+      "seconds": 0.03325078800025949,
+      "cpu_seconds": 0.033252647999999496,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 0,
+      "seconds": 0.00805941199996596,
+      "cpu_seconds": 0.008061022999999778,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 3,
+      "seconds": 0.019913694000024407,
+      "cpu_seconds": 0.019914551999999475,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 6,
+      "seconds": 0.17393297599937796,
+      "cpu_seconds": 0.17393488300000026,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 6,
+      "seconds": 0.03073544499966374,
+      "cpu_seconds": 0.030737003000000485,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 1,
+      "seconds": 0.03675339300025371,
+      "cpu_seconds": 0.03675559599999989,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 3,
+      "seconds": 0.15290443699996104,
+      "cpu_seconds": 0.15291405799999946,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 7,
+      "seconds": 0.019092382999588153,
+      "cpu_seconds": 0.01909239299999932,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 8,
+      "seconds": 0.1824455920004766,
+      "cpu_seconds": 0.17203962800000028,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 4,
+      "seconds": 0.033001003000208584,
+      "cpu_seconds": 0.033002030999999654,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 7,
+      "seconds": 0.012862384999607457,
+      "cpu_seconds": 0.012862954000000038,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 4,
+      "seconds": 0.13357854100013355,
+      "cpu_seconds": 0.13349844000000033,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 8,
+      "seconds": 0.007718725999438902,
+      "cpu_seconds": 0.0077203749999998905,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 0,
+      "seconds": 0.14939666099962778,
+      "cpu_seconds": 0.14937124000000068,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 0,
+      "seconds": 0.10538474999975733,
+      "cpu_seconds": 0.1053916930000014,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 7,
+      "seconds": 0.013521556999876339,
+      "cpu_seconds": 0.013521973999999659,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 5,
+      "seconds": 0.13364919600007852,
+      "cpu_seconds": 0.13360630999999934,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 6,
+      "seconds": 0.1282528720003029,
+      "cpu_seconds": 0.1282627620000003,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 0,
+      "seconds": 0.011373402000572241,
+      "cpu_seconds": 0.011374765999999426,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 4,
+      "seconds": 0.046922407999772986,
+      "cpu_seconds": 0.0469267800000015,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 3,
+      "seconds": 0.14615643700017245,
+      "cpu_seconds": 0.1461659080000004,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 8,
+      "seconds": 0.09280607300024712,
+      "cpu_seconds": 0.09269809100000082,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 7,
+      "seconds": 0.0078041840006335406,
+      "cpu_seconds": 0.007803924000000961,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 5,
+      "seconds": 0.011724895999577711,
+      "cpu_seconds": 0.011726064999999508,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 4,
+      "seconds": 0.14129093300016393,
+      "cpu_seconds": 0.1412909400000011,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 1,
+      "seconds": 0.01667210300001898,
+      "cpu_seconds": 0.016672821000000226,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 5,
+      "seconds": 0.00809226999990642,
+      "cpu_seconds": 0.008094081999999503,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 2,
+      "seconds": 0.13378452699998888,
+      "cpu_seconds": 0.13376287900000072,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 1,
+      "seconds": 0.009653200000684592,
+      "cpu_seconds": 0.009652361000000553,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 7,
+      "seconds": 0.032003941000766645,
+      "cpu_seconds": 0.03200629799999888,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 4,
+      "seconds": 0.13479574899974978,
+      "cpu_seconds": 0.13479662200000142,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 6,
+      "seconds": 0.020441896000193083,
+      "cpu_seconds": 0.02044231799999885,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 5,
+      "seconds": 0.11894210599984945,
+      "cpu_seconds": 0.11893999099999952,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 5,
+      "seconds": 0.1367813010001555,
+      "cpu_seconds": 0.1367338310000008,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 4,
+      "seconds": 0.008809058000224468,
+      "cpu_seconds": 0.008810098000001432,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 0,
+      "seconds": 0.024229001999628963,
+      "cpu_seconds": 0.024231991999998925,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 0,
+      "seconds": 0.017330245000266586,
+      "cpu_seconds": 0.017331112000000815,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 6,
+      "seconds": 0.15071647700005997,
+      "cpu_seconds": 0.14994172599999978,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 2,
+      "seconds": 0.14271620199997415,
+      "cpu_seconds": 0.1355868840000003,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 4,
+      "seconds": 0.02183729299940751,
+      "cpu_seconds": 0.021837272999999158,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 1,
+      "seconds": 0.15112494900040474,
+      "cpu_seconds": 0.15108993399999981,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 1,
+      "seconds": 0.14066238299983524,
+      "cpu_seconds": 0.14067105200000007,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 2,
+      "seconds": 0.03982983300011256,
+      "cpu_seconds": 0.03983337599999892,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 1,
+      "seconds": 0.011682507000841724,
+      "cpu_seconds": 0.011671460000000522,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 3,
+      "seconds": 0.03580025700011902,
+      "cpu_seconds": 0.03580351999999998,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 5,
+      "seconds": 0.16077700200003164,
+      "cpu_seconds": 0.16078839699999925,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 0,
+      "seconds": 0.032839074999174045,
+      "cpu_seconds": 0.03284016400000134,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 3,
+      "seconds": 0.010130441000001156,
+      "cpu_seconds": 0.010131244000000095,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 8,
+      "seconds": 0.008397368999794708,
+      "cpu_seconds": 0.008398327000000094,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 5,
+      "seconds": 0.03268199000012828,
+      "cpu_seconds": 0.03268445199999981,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 5,
+      "seconds": 0.01026806900063093,
+      "cpu_seconds": 0.010269104000000695,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 1,
+      "seconds": 0.05059735400027421,
+      "cpu_seconds": 0.05060181500000027,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 2,
+      "seconds": 0.11488821900002222,
+      "cpu_seconds": 0.11489683200000123,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 7,
+      "seconds": 0.007717104000221298,
+      "cpu_seconds": 0.007718399999999903,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 0,
+      "seconds": 0.007690372999604733,
+      "cpu_seconds": 0.007690808000001326,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 5,
+      "seconds": 0.00817199300036009,
+      "cpu_seconds": 0.008173969000001335,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 8,
+      "seconds": 0.1409112470000764,
+      "cpu_seconds": 0.14091064999999858,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 6,
+      "seconds": 0.03016585200020927,
+      "cpu_seconds": 0.030158856999999983,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 4,
+      "seconds": 0.012190761999590904,
+      "cpu_seconds": 0.012191070000000082,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 1,
+      "seconds": 0.008170300000529096,
+      "cpu_seconds": 0.008170524000000512,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 1,
+      "seconds": 0.02639335499952722,
+      "cpu_seconds": 0.02639400900000055,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 6,
+      "seconds": 0.14764290200037067,
+      "cpu_seconds": 0.1475744480000003,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 7,
+      "seconds": 0.007290771999578283,
+      "cpu_seconds": 0.0072911229999998994,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 3,
+      "seconds": 0.025509955000416085,
+      "cpu_seconds": 0.025512917000000357,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 3,
+      "seconds": 0.014455753000220284,
+      "cpu_seconds": 0.014456737999999802,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 1,
+      "seconds": 0.12180983800044487,
+      "cpu_seconds": 0.12180990200000075,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 2,
+      "seconds": 0.022977428000558575,
+      "cpu_seconds": 0.02298015300000067,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 4,
+      "seconds": 0.030641139000181283,
+      "cpu_seconds": 0.030642250000001425,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 4,
+      "seconds": 0.1419377069996699,
+      "cpu_seconds": 0.14194536499999977,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 3,
+      "seconds": 0.1484610999996221,
+      "cpu_seconds": 0.1484693650000004,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 6,
+      "seconds": 0.00835267499951442,
+      "cpu_seconds": 0.008353806000000574,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 6,
+      "seconds": 0.007366599999841128,
+      "cpu_seconds": 0.007367277999998478,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 0,
+      "seconds": 0.04433046199937962,
+      "cpu_seconds": 0.04433418099999997,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 7,
+      "seconds": 0.041205118999641854,
+      "cpu_seconds": 0.041259322000000154,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 2,
+      "seconds": 0.015483043999665824,
+      "cpu_seconds": 0.01548389999999955,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 8,
+      "seconds": 0.017294584999945073,
+      "cpu_seconds": 0.01729588299999918,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 2,
+      "seconds": 0.037827379000191286,
+      "cpu_seconds": 0.03777066600000012,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 1,
+      "seconds": 0.012622692000149982,
+      "cpu_seconds": 0.012623552999999177,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 6,
+      "seconds": 0.039851425999586354,
+      "cpu_seconds": 0.03276441999999946,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 6,
+      "seconds": 0.5520482179999817,
+      "cpu_seconds": 0.549087686,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 0,
+      "seconds": 0.03503078099947743,
+      "cpu_seconds": 0.03503315299999876,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 0,
+      "seconds": 0.09980037399964203,
+      "cpu_seconds": 0.09954430300000006,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 6,
+      "seconds": 0.12350869599958969,
+      "cpu_seconds": 0.12342410199999954,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 1,
+      "seconds": 0.06408418899991375,
+      "cpu_seconds": 0.06400787499999971,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 5,
+      "seconds": 0.24509165099971142,
+      "cpu_seconds": 0.2449416840000005,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 0,
+      "seconds": 0.3273859769997216,
+      "cpu_seconds": 0.3238408140000004,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 3,
+      "seconds": 0.06387245600035385,
+      "cpu_seconds": 0.06386669900000008,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 3,
+      "seconds": 0.02321929200024897,
+      "cpu_seconds": 0.02321936299999905,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 3,
+      "seconds": 0.2819240130002072,
+      "cpu_seconds": 0.2819409499999992,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 1,
+      "seconds": 0.25760354200065194,
+      "cpu_seconds": 0.24948422699999995,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 5,
+      "seconds": 0.010894092999478744,
+      "cpu_seconds": 0.010893963999999201,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 6,
+      "seconds": 0.06384865700056253,
+      "cpu_seconds": 0.06369108599999862,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 5,
+      "seconds": 0.1327084360000299,
+      "cpu_seconds": 0.13251507300000043,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 6,
+      "seconds": 0.01823027699992963,
+      "cpu_seconds": 0.01823032400000102,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 3,
+      "seconds": 0.12025131800055533,
+      "cpu_seconds": 0.12025865099999855,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 5,
+      "seconds": 0.02412311399984901,
+      "cpu_seconds": 0.024124940000000095,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 8,
+      "seconds": 0.29810859600002004,
+      "cpu_seconds": 0.2980801149999994,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 5,
+      "seconds": 0.040377356999670155,
+      "cpu_seconds": 0.04037904800000014,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 0,
+      "seconds": 0.023636531000192917,
+      "cpu_seconds": 0.02363776400000006,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 1,
+      "seconds": 0.3581607950000034,
+      "cpu_seconds": 0.358124643,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 7,
+      "seconds": 0.2764080790002481,
+      "cpu_seconds": 0.2756405759999989,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 2,
+      "seconds": 0.21180899999944813,
+      "cpu_seconds": 0.21181094499999986,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 4,
+      "seconds": 0.032754347000263806,
+      "cpu_seconds": 0.03275588800000051,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 2,
+      "seconds": 0.40686719799941784,
+      "cpu_seconds": 0.4053608740000012,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 0,
+      "seconds": 0.1400904399997671,
+      "cpu_seconds": 0.14009127399999954,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 1,
+      "seconds": 0.021379519999754848,
+      "cpu_seconds": 0.02135853699999757,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 7,
+      "seconds": 0.15534742799991363,
+      "cpu_seconds": 0.15535768400000194,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 0,
+      "seconds": 0.030237326999667857,
+      "cpu_seconds": 0.03023914199999922,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 3,
+      "seconds": 0.1514719309998327,
+      "cpu_seconds": 0.15147345900000175,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 5,
+      "seconds": 0.03713992400025745,
+      "cpu_seconds": 0.037142504999998494,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 1,
+      "seconds": 0.034128365000469785,
+      "cpu_seconds": 0.034131502000001035,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 7,
+      "seconds": 0.16391264399953798,
+      "cpu_seconds": 0.16392355900000055,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 1,
+      "seconds": 0.1198566960001699,
+      "cpu_seconds": 0.11986394699999892,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 4,
+      "seconds": 0.12238710899964644,
+      "cpu_seconds": 0.12238574399999891,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 0,
+      "seconds": 0.13697541000055935,
+      "cpu_seconds": 0.13697320700000049,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 1,
+      "seconds": 0.011422372999732033,
+      "cpu_seconds": 0.011424692999998598,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 7,
+      "seconds": 0.01276853299987124,
+      "cpu_seconds": 0.01276978400000317,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 2,
+      "seconds": 0.06916544900013832,
+      "cpu_seconds": 0.06914607499999903,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 6,
+      "seconds": 0.013407094000285724,
+      "cpu_seconds": 0.013407989000000953,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 4,
+      "seconds": 0.15853481799967994,
+      "cpu_seconds": 0.1585439849999979,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 3,
+      "seconds": 0.14985124800023186,
+      "cpu_seconds": 0.14985398500000002,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 6,
+      "seconds": 0.13698252199992567,
+      "cpu_seconds": 0.1369899580000009,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 7,
+      "seconds": 0.009153774999504094,
+      "cpu_seconds": 0.009153763000000481,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 5,
+      "seconds": 0.03267255300033867,
+      "cpu_seconds": 0.03267447899999709,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 8,
+      "seconds": 0.013478513999871211,
+      "cpu_seconds": 0.013479931999999195,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 5,
+      "seconds": 0.041923945999769785,
+      "cpu_seconds": 0.04192738100000071,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 3,
+      "seconds": 0.03061107399935281,
+      "cpu_seconds": 0.030613538999997303,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 6,
+      "seconds": 0.012383884000882972,
+      "cpu_seconds": 0.012384555999997104,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 2,
+      "seconds": 0.1324683670000013,
+      "cpu_seconds": 0.13247672600000016,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 1,
+      "seconds": 0.009572144999765442,
+      "cpu_seconds": 0.009572807999997934,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 0,
+      "seconds": 0.17520612799944502,
+      "cpu_seconds": 0.16915335800000264,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 0,
+      "seconds": 0.15889029599929927,
+      "cpu_seconds": 0.15887021700000048,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 8,
+      "seconds": 0.01726388000042789,
+      "cpu_seconds": 0.0172648680000016,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 3,
+      "seconds": 0.13063865100048133,
+      "cpu_seconds": 0.13064700900000048,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 6,
+      "seconds": 0.036607768000067153,
+      "cpu_seconds": 0.036600716000002365,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 3,
+      "seconds": 0.1577782650001609,
+      "cpu_seconds": 0.15778840000000116,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 2,
+      "seconds": 0.03183289199932915,
+      "cpu_seconds": 0.03183492400000176,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 8,
+      "seconds": 0.008268562000012025,
+      "cpu_seconds": 0.008269036999998036,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 8,
+      "seconds": 0.026300980000087293,
+      "cpu_seconds": 0.026302965999999373,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 2,
+      "seconds": 0.01234233399918594,
+      "cpu_seconds": 0.012342092000000804,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 2,
+      "seconds": 0.1532380029993874,
+      "cpu_seconds": 0.15324789800000005,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 0,
+      "seconds": 0.14426845199977834,
+      "cpu_seconds": 0.14426904799999818,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 0,
+      "seconds": 0.13236853000034898,
+      "cpu_seconds": 0.13236280499999964,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 5,
+      "seconds": 0.15119393399982073,
+      "cpu_seconds": 0.15119589300000058,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 4,
+      "seconds": 0.10777165200033778,
+      "cpu_seconds": 0.10777808599999972,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 7,
+      "seconds": 0.026742431999991823,
+      "cpu_seconds": 0.026744118999999955,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 6,
+      "seconds": 0.1452710980001939,
+      "cpu_seconds": 0.1452284199999987,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 7,
+      "seconds": 0.008654648999254277,
+      "cpu_seconds": 0.008654294999999479,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 8,
+      "seconds": 0.13338080999983504,
+      "cpu_seconds": 0.1333903379999981,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 5,
+      "seconds": 0.037906305999968026,
+      "cpu_seconds": 0.0379088199999984,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 5,
+      "seconds": 0.007463083999937226,
+      "cpu_seconds": 0.00746450900000184,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 2,
+      "seconds": 0.1376418959998773,
+      "cpu_seconds": 0.13765135600000278,
+      "frame_bytes": 2400661
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 5,
+      "seconds": 0.007069312999192334,
+      "cpu_seconds": 0.007070942999998664,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 3,
+      "seconds": 0.007050477000120736,
+      "cpu_seconds": 0.00705220100000048,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 7,
+      "seconds": 0.29940768999949796,
+      "cpu_seconds": 0.2908258359999998,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 1,
+      "seconds": 0.07428626499950042,
+      "cpu_seconds": 0.07428293799999963,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "round": 5,
+      "seconds": 0.31810690599922964,
+      "cpu_seconds": 0.3180966269999992,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 0,
+      "seconds": 0.020282643999962602,
+      "cpu_seconds": 0.020284340999999984,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 5,
+      "seconds": 0.025285724000241316,
+      "cpu_seconds": 0.02528688499999987,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 2,
+      "seconds": 0.020492056999501074,
+      "cpu_seconds": 0.020493204999997516,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 8,
+      "seconds": 0.24508550299924536,
+      "cpu_seconds": 0.24509958100000162,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 1,
+      "seconds": 0.34451688099943567,
+      "cpu_seconds": 0.3394917229999983,
+      "frame_bytes": 754530
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 1,
+      "seconds": 0.3141345869998986,
+      "cpu_seconds": 0.31236970900000216,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 7,
+      "seconds": 0.08569277399965358,
+      "cpu_seconds": 0.0856983439999972,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 6,
+      "seconds": 0.23020807600005355,
+      "cpu_seconds": 0.23020114200000208,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 0,
+      "seconds": 0.07386865999978909,
+      "cpu_seconds": 0.07387245099999973,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 4,
+      "seconds": 0.02044528300029924,
+      "cpu_seconds": 0.020446430999999876,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 3,
+      "seconds": 0.018793707999975595,
+      "cpu_seconds": 0.019053681000002598,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 2,
+      "seconds": 0.06276980599977833,
+      "cpu_seconds": 0.06276266799999775,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 2,
+      "seconds": 0.1253664400001071,
+      "cpu_seconds": 0.11895841499999804,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 2,
+      "seconds": 0.036833565999586426,
+      "cpu_seconds": 0.03683678299999826,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 4,
+      "seconds": 0.3131285250001383,
+      "cpu_seconds": 0.31312937399999896,
+      "frame_bytes": 598
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 6,
+      "seconds": 0.01742477600055281,
+      "cpu_seconds": 0.01742396599999907,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 2,
+      "seconds": 0.09271698799966543,
+      "cpu_seconds": 0.09272298099999787,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 1,
+      "seconds": 0.0267970549994061,
+      "cpu_seconds": 0.026798608,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 4,
+      "seconds": 0.3254016529999717,
+      "cpu_seconds": 0.3254193739999991,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 7,
+      "seconds": 0.21188510299998597,
+      "cpu_seconds": 0.20797336100000052,
+      "frame_bytes": 2308984
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "round": 2,
+      "seconds": 0.15351846900011878,
+      "cpu_seconds": 0.15351866700000016,
+      "frame_bytes": 3008818
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 1,
+      "seconds": 0.025877512999613828,
+      "cpu_seconds": 0.025879184999997307,
+      "frame_bytes": 1182962
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 6,
+      "seconds": 0.01557083099942247,
+      "cpu_seconds": 0.015573051999997034,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 5,
+      "seconds": 0.014561026000592392,
+      "cpu_seconds": 0.014563319000000519,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "round": 7,
+      "seconds": 0.030205388000467792,
+      "cpu_seconds": 0.030207703999998614,
+      "frame_bytes": 22584
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 4,
+      "seconds": 0.010646986000210745,
+      "cpu_seconds": 0.010648358000000968,
+      "frame_bytes": 570
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 7,
+      "seconds": 0.023006096000244725,
+      "cpu_seconds": 0.023007760999998794,
+      "frame_bytes": 3815992
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 6,
+      "seconds": 0.01423203500053205,
+      "cpu_seconds": 0.014232850999999158,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 3,
+      "seconds": 0.00772550500005309,
+      "cpu_seconds": 0.007726886000000377,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "round": 8,
+      "seconds": 0.008772101000431576,
+      "cpu_seconds": 0.008774027000001183,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "round": 6,
+      "seconds": 0.03648532300030638,
+      "cpu_seconds": 0.03645801800000115,
+      "frame_bytes": 4194448
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "round": 4,
+      "seconds": 0.007186899999396701,
+      "cpu_seconds": 0.007188596999998964,
+      "frame_bytes": 4194448
+    }
+  ],
+  "memory": [
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "python_encode_peak_bytes": 4194658
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "python_encode_peak_bytes": 4194763
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "python_encode_peak_bytes": 13993696
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "python_encode_peak_bytes": 13993517
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "python_encode_peak_bytes": 12616187
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "python_encode_peak_bytes": 8405447
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "python_encode_peak_bytes": 22369832
+    },
+    {
+      "dataset": "random",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "python_encode_peak_bytes": 22369832
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "python_encode_peak_bytes": 4194658
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "python_encode_peak_bytes": 4194763
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "python_encode_peak_bytes": 8388762
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "python_encode_peak_bytes": 8388762
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "python_encode_peak_bytes": 8422201
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "python_encode_peak_bytes": 4211461
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "python_encode_peak_bytes": 22369832
+    },
+    {
+      "dataset": "repeated",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "python_encode_peak_bytes": 22369832
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "python_encode_peak_bytes": 4194658
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "python_encode_peak_bytes": 4194763
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "python_encode_peak_bytes": 12106944
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "python_encode_peak_bytes": 12106765
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "python_encode_peak_bytes": 12237623
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "python_encode_peak_bytes": 8026883
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "python_encode_peak_bytes": 22369832
+    },
+    {
+      "dataset": "float32",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "python_encode_peak_bytes": 22369832
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "python_encode_peak_bytes": 4194658
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "raw",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "python_encode_peak_bytes": 4194763
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "before",
+      "python_encode_peak_bytes": 12198621
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zlib1",
+        4,
+        "none"
+      ],
+      "revision": "after",
+      "python_encode_peak_bytes": 12198442
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "before",
+      "python_encode_peak_bytes": 9604593
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd1",
+        1,
+        "none"
+      ],
+      "revision": "after",
+      "python_encode_peak_bytes": 5393853
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "before",
+      "python_encode_peak_bytes": 22369832
+    },
+    {
+      "dataset": "stdlib",
+      "recipe": [
+        "zstd3",
+        4,
+        "subtract"
+      ],
+      "revision": "after",
+      "python_encode_peak_bytes": 22369832
+    }
+  ],
+  "https_summary": [
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "samples": 5,
+      "median_seconds": 0.2899076099993181,
+      "median_cpu_seconds": 0.11841425900000502,
+      "median_http_plaintext_bytes": 1159191,
+      "min_seconds": 0.27504197799953545,
+      "max_seconds": 0.3230950450006276
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "samples": 5,
+      "median_seconds": 0.2988670210006603,
+      "median_cpu_seconds": 0.12094327299999463,
+      "median_http_plaintext_bytes": 1196521,
+      "min_seconds": 0.29060838199984573,
+      "max_seconds": 0.3763798850004605
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "none",
+      "samples": 5,
+      "median_seconds": 0.37135134799973457,
+      "median_cpu_seconds": 0.060889073000002014,
+      "median_http_plaintext_bytes": 2099811,
+      "min_seconds": 0.35756604299967876,
+      "max_seconds": 0.3800816799994209
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "samples": 5,
+      "median_seconds": 0.237883146999593,
+      "median_cpu_seconds": 0.23826527399999975,
+      "median_http_plaintext_bytes": 2100153,
+      "min_seconds": 0.12900217900005373,
+      "max_seconds": 0.30428998800016416
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "samples": 5,
+      "median_seconds": 0.06186166899988166,
+      "median_cpu_seconds": 0.06196644300000287,
+      "median_http_plaintext_bytes": 2100153,
+      "min_seconds": 0.051282870000250114,
+      "max_seconds": 0.07433342599961179
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "samples": 5,
+      "median_seconds": 0.12497447399982775,
+      "median_cpu_seconds": 0.11919164700000096,
+      "median_http_plaintext_bytes": 1196521,
+      "min_seconds": 0.11568299499958812,
+      "max_seconds": 0.22535614000025816
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "samples": 5,
+      "median_seconds": 0.1862436350002099,
+      "median_cpu_seconds": 0.12132684200000199,
+      "median_http_plaintext_bytes": 394810,
+      "min_seconds": 0.15869017800014262,
+      "max_seconds": 0.26427913200041075
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "samples": 5,
+      "median_seconds": 0.06280915299976186,
+      "median_cpu_seconds": 0.0588279410000041,
+      "median_http_plaintext_bytes": 2100153,
+      "min_seconds": 0.05578648800019437,
+      "max_seconds": 0.07953774300040095
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "samples": 5,
+      "median_seconds": 0.3865443980002965,
+      "median_cpu_seconds": 0.07203755200000472,
+      "median_http_plaintext_bytes": 2100153,
+      "min_seconds": 0.3728895330004889,
+      "max_seconds": 0.4039662770001087
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "none",
+      "samples": 5,
+      "median_seconds": 0.046542285999748856,
+      "median_cpu_seconds": 0.040938881999998955,
+      "median_http_plaintext_bytes": 2099811,
+      "min_seconds": 0.039480189000641985,
+      "max_seconds": 0.0532594500000414
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "gzip",
+      "samples": 5,
+      "median_seconds": 0.20201965300020674,
+      "median_cpu_seconds": 0.1930292880000053,
+      "median_http_plaintext_bytes": 2100551,
+      "min_seconds": 0.10420440599955327,
+      "max_seconds": 0.21736824500021612
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "none",
+      "samples": 5,
+      "median_seconds": 0.3636750639998354,
+      "median_cpu_seconds": 0.06099844300000257,
+      "median_http_plaintext_bytes": 2099811,
+      "min_seconds": 0.3573689820004802,
+      "max_seconds": 0.3727123399994525
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "none",
+      "samples": 5,
+      "median_seconds": 0.3628311450002002,
+      "median_cpu_seconds": 0.04960570699999778,
+      "median_http_plaintext_bytes": 2099811,
+      "min_seconds": 0.36099340500004473,
+      "max_seconds": 0.37124737600061053
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "samples": 5,
+      "median_seconds": 0.44504707800024335,
+      "median_cpu_seconds": 0.1293870080000019,
+      "median_http_plaintext_bytes": 2100153,
+      "min_seconds": 0.4355688320001718,
+      "max_seconds": 0.45278089600014937
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "samples": 5,
+      "median_seconds": 0.33068786500007263,
+      "median_cpu_seconds": 0.15019453000000027,
+      "median_http_plaintext_bytes": 1196521,
+      "min_seconds": 0.3068113119998088,
+      "max_seconds": 0.41163808300007076
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "samples": 5,
+      "median_seconds": 0.14664060299946868,
+      "median_cpu_seconds": 0.12453447299999709,
+      "median_http_plaintext_bytes": 2100153,
+      "min_seconds": 0.11416534099953424,
+      "max_seconds": 0.2434234580005068
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "samples": 5,
+      "median_seconds": 0.10763941899949714,
+      "median_cpu_seconds": 0.10669256399999938,
+      "median_http_plaintext_bytes": 1159191,
+      "min_seconds": 0.10094996499992703,
+      "max_seconds": 0.20770382699993206
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "samples": 5,
+      "median_seconds": 0.43443709300026967,
+      "median_cpu_seconds": 0.12047139999999956,
+      "median_http_plaintext_bytes": 2100153,
+      "min_seconds": 0.4271154719999686,
+      "max_seconds": 0.44545394299984764
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "gzip",
+      "samples": 5,
+      "median_seconds": 0.5173649890002707,
+      "median_cpu_seconds": 0.20755684099999883,
+      "median_http_plaintext_bytes": 2100551,
+      "min_seconds": 0.4248317589999715,
+      "max_seconds": 0.5354815270002291
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "samples": 5,
+      "median_seconds": 0.1630250950001937,
+      "median_cpu_seconds": 0.10875454399999995,
+      "median_http_plaintext_bytes": 394810,
+      "min_seconds": 0.15851767099957215,
+      "max_seconds": 0.2311883279999165
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "samples": 5,
+      "median_seconds": 0.06552525799997966,
+      "median_cpu_seconds": 0.05959665099999967,
+      "median_http_plaintext_bytes": 2100153,
+      "min_seconds": 0.05425462899984268,
+      "max_seconds": 0.07497952399990027
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "samples": 5,
+      "median_seconds": 0.11321044899978006,
+      "median_cpu_seconds": 0.1103558070000048,
+      "median_http_plaintext_bytes": 1159191,
+      "min_seconds": 0.10807879399999365,
+      "max_seconds": 0.20027879600002052
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "none",
+      "samples": 5,
+      "median_seconds": 0.04631567599972186,
+      "median_cpu_seconds": 0.04441723499999739,
+      "median_http_plaintext_bytes": 2099811,
+      "min_seconds": 0.042164243000115675,
+      "max_seconds": 0.05738474400004634
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "gzip",
+      "samples": 5,
+      "median_seconds": 0.15405881100014085,
+      "median_cpu_seconds": 0.16441941800000137,
+      "median_http_plaintext_bytes": 1899733,
+      "min_seconds": 0.14914248100012628,
+      "max_seconds": 0.311093773999346
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "gzip",
+      "samples": 5,
+      "median_seconds": 0.4313395490007679,
+      "median_cpu_seconds": 0.1688117730000016,
+      "median_http_plaintext_bytes": 1899733,
+      "min_seconds": 0.4299535130003278,
+      "max_seconds": 0.5759284959995057
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "samples": 5,
+      "median_seconds": 0.0704726309995749,
+      "median_cpu_seconds": 0.0659114000000045,
+      "median_http_plaintext_bytes": 2100153,
+      "min_seconds": 0.058330152000053204,
+      "max_seconds": 0.07337285799985693
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "samples": 5,
+      "median_seconds": 0.15568179599995347,
+      "median_cpu_seconds": 0.07591486900000177,
+      "median_http_plaintext_bytes": 534606,
+      "min_seconds": 0.1382061739996061,
+      "max_seconds": 0.2691898989996844
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "samples": 5,
+      "median_seconds": 0.15299140100069053,
+      "median_cpu_seconds": 0.06723914099999462,
+      "median_http_plaintext_bytes": 534606,
+      "min_seconds": 0.14175172799969005,
+      "max_seconds": 0.18287856400002056
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "none",
+      "samples": 5,
+      "median_seconds": 0.041067901000133133,
+      "median_cpu_seconds": 0.035119757000003915,
+      "median_http_plaintext_bytes": 2099811,
+      "min_seconds": 0.03929909199996473,
+      "max_seconds": 0.04614550400037842
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "samples": 5,
+      "median_seconds": 0.05813269499958551,
+      "median_cpu_seconds": 0.053468805999997926,
+      "median_http_plaintext_bytes": 2100153,
+      "min_seconds": 0.048497583999960625,
+      "max_seconds": 0.06396108399985678
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "gzip",
+      "samples": 5,
+      "median_seconds": 0.07326015400030883,
+      "median_cpu_seconds": 0.07000357000000434,
+      "median_http_plaintext_bytes": 628873,
+      "min_seconds": 0.06377719099964452,
+      "max_seconds": 0.12752355999964493
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "gzip",
+      "samples": 5,
+      "median_seconds": 0.16111151099994458,
+      "median_cpu_seconds": 0.08021703900000432,
+      "median_http_plaintext_bytes": 628873,
+      "min_seconds": 0.15275823299998592,
+      "max_seconds": 0.24046743599956244
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "samples": 5,
+      "median_seconds": 0.11830579599973134,
+      "median_cpu_seconds": 0.11412927899999659,
+      "median_http_plaintext_bytes": 1196521,
+      "min_seconds": 0.11370503600028314,
+      "max_seconds": 0.12027191000015591
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "samples": 5,
+      "median_seconds": 0.3810940639996261,
+      "median_cpu_seconds": 0.08367216599999949,
+      "median_http_plaintext_bytes": 2100153,
+      "min_seconds": 0.3723933279998164,
+      "max_seconds": 0.4065025150002839
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "samples": 5,
+      "median_seconds": 0.05200596899976517,
+      "median_cpu_seconds": 0.04587904399999587,
+      "median_http_plaintext_bytes": 2100153,
+      "min_seconds": 0.04705881900008535,
+      "max_seconds": 0.08269458599988866
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "samples": 5,
+      "median_seconds": 0.2792916200005493,
+      "median_cpu_seconds": 0.10924673199999546,
+      "median_http_plaintext_bytes": 1159191,
+      "min_seconds": 0.27071286200043687,
+      "max_seconds": 0.2841388230008306
+    }
+  ],
+  "https_raw": [
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "round": 0,
+      "seconds": 0.3230950450006276,
+      "cpu_seconds": 0.154638649999999,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "round": 4,
+      "seconds": 0.29060838199984573,
+      "cpu_seconds": 0.11864369300000277,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "none",
+      "round": 2,
+      "seconds": 0.37240780199954315,
+      "cpu_seconds": 0.060889073000002014,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "round": 1,
+      "seconds": 0.30428998800016416,
+      "cpu_seconds": 0.2824863449999988,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "round": 2,
+      "seconds": 0.06497802600006253,
+      "cpu_seconds": 0.06217578400000079,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "round": 4,
+      "seconds": 0.19744360000004235,
+      "cpu_seconds": 0.19476881699999993,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "round": 0,
+      "seconds": 0.22535614000025816,
+      "cpu_seconds": 0.22024350999999598,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "round": 3,
+      "seconds": 0.18906537800012302,
+      "cpu_seconds": 0.11854881899999725,
+      "http_plaintext_bytes": 501251,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 498496,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "round": 2,
+      "seconds": 0.07939223599987599,
+      "cpu_seconds": 0.0691669510000068,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "round": 3,
+      "seconds": 0.4019755039998927,
+      "cpu_seconds": 0.0933558839999975,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "none",
+      "round": 3,
+      "seconds": 0.049234046000492526,
+      "cpu_seconds": 0.040938881999998955,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "gzip",
+      "round": 4,
+      "seconds": 0.21736824500021612,
+      "cpu_seconds": 0.22593017100000168,
+      "http_plaintext_bytes": 2100551,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "none",
+      "round": 4,
+      "seconds": 0.3717814449992147,
+      "cpu_seconds": 0.07444506000000217,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "none",
+      "round": 2,
+      "seconds": 0.37124737600061053,
+      "cpu_seconds": 0.06719355099999547,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "round": 4,
+      "seconds": 0.45278089600014937,
+      "cpu_seconds": 0.14200847800000105,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "round": 0,
+      "seconds": 0.41163808300007076,
+      "cpu_seconds": 0.23714309599999694,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "gzip",
+      "round": 1,
+      "seconds": 0.20201965300020674,
+      "cpu_seconds": 0.20027346600000584,
+      "http_plaintext_bytes": 2100551,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "round": 4,
+      "seconds": 0.07953774300040095,
+      "cpu_seconds": 0.07414764300000343,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "round": 4,
+      "seconds": 0.4039662770001087,
+      "cpu_seconds": 0.09482835700000436,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "round": 0,
+      "seconds": 0.14664060299946868,
+      "cpu_seconds": 0.14068275500000027,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "round": 0,
+      "seconds": 0.20770382699993206,
+      "cpu_seconds": 0.20680900100000343,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "round": 1,
+      "seconds": 0.43329103699943516,
+      "cpu_seconds": 0.12047139999999956,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "gzip",
+      "round": 3,
+      "seconds": 0.5173649890002707,
+      "cpu_seconds": 0.20755684099999883,
+      "http_plaintext_bytes": 2100551,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "round": 0,
+      "seconds": 0.20273792199986929,
+      "cpu_seconds": 0.1241891680000009,
+      "http_plaintext_bytes": 394810,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 392055,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "none",
+      "round": 0,
+      "seconds": 0.3727123399994525,
+      "cpu_seconds": 0.06319559300000321,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "round": 0,
+      "seconds": 0.06608744700042735,
+      "cpu_seconds": 0.05959665099999967,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "round": 4,
+      "seconds": 0.26427913200041075,
+      "cpu_seconds": 0.1258233550000014,
+      "http_plaintext_bytes": 1002784,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1000029,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "round": 0,
+      "seconds": 0.11321044899978006,
+      "cpu_seconds": 0.10955666400000297,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "round": 4,
+      "seconds": 0.15851767099957215,
+      "cpu_seconds": 0.10325232099999937,
+      "http_plaintext_bytes": 394810,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 392055,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "round": 3,
+      "seconds": 0.2988670210006603,
+      "cpu_seconds": 0.12107532699999979,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "none",
+      "round": 0,
+      "seconds": 0.048464584000612376,
+      "cpu_seconds": 0.04441723499999739,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "gzip",
+      "round": 0,
+      "seconds": 0.15405881100014085,
+      "cpu_seconds": 0.16441941800000137,
+      "http_plaintext_bytes": 1899733,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "gzip",
+      "round": 0,
+      "seconds": 0.5687655239999003,
+      "cpu_seconds": 0.29834358099999747,
+      "http_plaintext_bytes": 1899733,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "none",
+      "round": 4,
+      "seconds": 0.05738474400004634,
+      "cpu_seconds": 0.05734963599999787,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "round": 2,
+      "seconds": 0.07337285799985693,
+      "cpu_seconds": 0.0659114000000045,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "none",
+      "round": 0,
+      "seconds": 0.046542285999748856,
+      "cpu_seconds": 0.050401271000005465,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "none",
+      "round": 2,
+      "seconds": 0.04167401799986692,
+      "cpu_seconds": 0.037973856999997224,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "gzip",
+      "round": 4,
+      "seconds": 0.14914248100012628,
+      "cpu_seconds": 0.15412513799999772,
+      "http_plaintext_bytes": 1899733,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "gzip",
+      "round": 4,
+      "seconds": 0.4248317589999715,
+      "cpu_seconds": 0.11790964199999365,
+      "http_plaintext_bytes": 2100551,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "gzip",
+      "round": 1,
+      "seconds": 0.4311876519996076,
+      "cpu_seconds": 0.1688117730000016,
+      "http_plaintext_bytes": 1899733,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "none",
+      "round": 1,
+      "seconds": 0.36404353600028116,
+      "cpu_seconds": 0.05775293700000361,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "round": 3,
+      "seconds": 0.05578648800019437,
+      "cpu_seconds": 0.051834909000000096,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "round": 3,
+      "seconds": 0.12497447399982775,
+      "cpu_seconds": 0.11919164700000096,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "round": 1,
+      "seconds": 0.154711261000557,
+      "cpu_seconds": 0.12453447299999709,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "round": 3,
+      "seconds": 0.10807879399999365,
+      "cpu_seconds": 0.1068716130000027,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "round": 4,
+      "seconds": 0.11310395799955586,
+      "cpu_seconds": 0.11130199899999837,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "round": 2,
+      "seconds": 0.1862436350002099,
+      "cpu_seconds": 0.1294827350000034,
+      "http_plaintext_bytes": 394810,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 392055,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "gzip",
+      "round": 2,
+      "seconds": 0.5293646990003253,
+      "cpu_seconds": 0.2198907140000017,
+      "http_plaintext_bytes": 2100551,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "none",
+      "round": 3,
+      "seconds": 0.3573689820004802,
+      "cpu_seconds": 0.04598469600000499,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "none",
+      "round": 1,
+      "seconds": 0.36099340500004473,
+      "cpu_seconds": 0.04627840200000577,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "none",
+      "round": 1,
+      "seconds": 0.3636750639998354,
+      "cpu_seconds": 0.06099844300000257,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "round": 3,
+      "seconds": 0.33068786500007263,
+      "cpu_seconds": 0.15019453000000027,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "round": 2,
+      "seconds": 0.11568299499958812,
+      "cpu_seconds": 0.11217525699999698,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "round": 0,
+      "seconds": 0.15082769400032703,
+      "cpu_seconds": 0.07591486900000177,
+      "http_plaintext_bytes": 534606,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 531851,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "round": 2,
+      "seconds": 0.3068113119998088,
+      "cpu_seconds": 0.12827802599999671,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "round": 1,
+      "seconds": 0.2924757099999624,
+      "cpu_seconds": 0.118877015999999,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "round": 0,
+      "seconds": 0.059868987999834644,
+      "cpu_seconds": 0.05818840199999897,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "round": 3,
+      "seconds": 0.16784553300021798,
+      "cpu_seconds": 0.09448369499999387,
+      "http_plaintext_bytes": 534606,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 531851,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "round": 1,
+      "seconds": 0.11382280100042408,
+      "cpu_seconds": 0.1103558070000048,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "none",
+      "round": 2,
+      "seconds": 0.040386497000326926,
+      "cpu_seconds": 0.0359161689999965,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "round": 0,
+      "seconds": 0.24915091900038533,
+      "cpu_seconds": 0.2473427990000019,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "round": 0,
+      "seconds": 0.06396108399985678,
+      "cpu_seconds": 0.05697737100000211,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "round": 3,
+      "seconds": 0.07433342599961179,
+      "cpu_seconds": 0.06912548700000087,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "gzip",
+      "round": 4,
+      "seconds": 0.4313395490007679,
+      "cpu_seconds": 0.16476090599999793,
+      "http_plaintext_bytes": 1899733,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "round": 0,
+      "seconds": 0.0724138089999542,
+      "cpu_seconds": 0.06892085399999814,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "none",
+      "round": 3,
+      "seconds": 0.3630040369998824,
+      "cpu_seconds": 0.05116222099999845,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "none",
+      "round": 0,
+      "seconds": 0.3618199709999317,
+      "cpu_seconds": 0.04960570699999778,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "gzip",
+      "round": 0,
+      "seconds": 0.12752355999964493,
+      "cpu_seconds": 0.12982967399999978,
+      "http_plaintext_bytes": 628873,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "none",
+      "round": 3,
+      "seconds": 0.04631567599972186,
+      "cpu_seconds": 0.045083141999995746,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "round": 2,
+      "seconds": 0.05813269499958551,
+      "cpu_seconds": 0.053468805999997926,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "round": 3,
+      "seconds": 0.2434234580005068,
+      "cpu_seconds": 0.24787381600000202,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "gzip",
+      "round": 2,
+      "seconds": 0.15963089399974706,
+      "cpu_seconds": 0.16089778699999613,
+      "http_plaintext_bytes": 2100551,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "round": 2,
+      "seconds": 0.3763798850004605,
+      "cpu_seconds": 0.20519577499999997,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "round": 1,
+      "seconds": 0.07497952399990027,
+      "cpu_seconds": 0.07128113899999988,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "gzip",
+      "round": 1,
+      "seconds": 0.1589576529995611,
+      "cpu_seconds": 0.08021703900000432,
+      "http_plaintext_bytes": 628873,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "round": 4,
+      "seconds": 0.063371355999152,
+      "cpu_seconds": 0.058815762999998356,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "round": 4,
+      "seconds": 0.2771146610002688,
+      "cpu_seconds": 0.10409022700000037,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "round": 3,
+      "seconds": 0.058330152000053204,
+      "cpu_seconds": 0.053553069999999536,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "round": 1,
+      "seconds": 0.120476318999863,
+      "cpu_seconds": 0.11721098299999966,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "round": 3,
+      "seconds": 0.4355688320001718,
+      "cpu_seconds": 0.12219850700000023,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "gzip",
+      "round": 3,
+      "seconds": 0.07326015400030883,
+      "cpu_seconds": 0.07000357000000434,
+      "http_plaintext_bytes": 628873,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "round": 4,
+      "seconds": 0.14472410100006528,
+      "cpu_seconds": 0.0667565099999976,
+      "http_plaintext_bytes": 534606,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 531851,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "round": 3,
+      "seconds": 0.10338520299956144,
+      "cpu_seconds": 0.10234574899999416,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "round": 2,
+      "seconds": 0.11416534099953424,
+      "cpu_seconds": 0.11046123900000282,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "round": 0,
+      "seconds": 0.06280915299976186,
+      "cpu_seconds": 0.0588279410000041,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "gzip",
+      "round": 0,
+      "seconds": 0.5154485399998521,
+      "cpu_seconds": 0.20655150999999705,
+      "http_plaintext_bytes": 2100551,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "round": 2,
+      "seconds": 0.11488891200042417,
+      "cpu_seconds": 0.11259408899999812,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "round": 0,
+      "seconds": 0.3819762120001542,
+      "cpu_seconds": 0.07203755200000472,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "round": 1,
+      "seconds": 0.1382061739996061,
+      "cpu_seconds": 0.06321024000000364,
+      "http_plaintext_bytes": 534606,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 531851,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "gzip",
+      "round": 2,
+      "seconds": 0.27861999300057505,
+      "cpu_seconds": 0.28585043399999677,
+      "http_plaintext_bytes": 1899733,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "round": 0,
+      "seconds": 0.43443709300026967,
+      "cpu_seconds": 0.11944380100000274,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "round": 1,
+      "seconds": 0.12027191000015591,
+      "cpu_seconds": 0.11794144699999976,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "round": 2,
+      "seconds": 0.44545394299984764,
+      "cpu_seconds": 0.1301732079999951,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "none",
+      "round": 4,
+      "seconds": 0.3628311450002002,
+      "cpu_seconds": 0.049185332000000415,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "gzip",
+      "round": 2,
+      "seconds": 0.24046743599956244,
+      "cpu_seconds": 0.15989133799999422,
+      "http_plaintext_bytes": 628873,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "round": 3,
+      "seconds": 0.3810940639996261,
+      "cpu_seconds": 0.08367216599999949,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "none",
+      "round": 3,
+      "seconds": 0.043388107999817294,
+      "cpu_seconds": 0.03592885500000165,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "round": 3,
+      "seconds": 0.23540896600025008,
+      "cpu_seconds": 0.23170355900000317,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "round": 3,
+      "seconds": 0.08269458599988866,
+      "cpu_seconds": 0.0875430460000004,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "round": 2,
+      "seconds": 0.16174016100012523,
+      "cpu_seconds": 0.10734669300000377,
+      "http_plaintext_bytes": 394810,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 392055,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "none",
+      "round": 2,
+      "seconds": 0.3606457930000033,
+      "cpu_seconds": 0.044543918999998766,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "round": 0,
+      "seconds": 0.2841388230008306,
+      "cpu_seconds": 0.11177899399999802,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "round": 1,
+      "seconds": 0.15869017800014262,
+      "cpu_seconds": 0.1049274240000031,
+      "http_plaintext_bytes": 394810,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 392055,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "round": 4,
+      "seconds": 0.10094996499992703,
+      "cpu_seconds": 0.09748208300000272,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "round": 4,
+      "seconds": 0.11858052500065241,
+      "cpu_seconds": 0.11412927899999659,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "round": 2,
+      "seconds": 0.2691898989996844,
+      "cpu_seconds": 0.14577312400000153,
+      "http_plaintext_bytes": 844002,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 841247,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "none",
+      "round": 2,
+      "seconds": 0.042164243000115675,
+      "cpu_seconds": 0.03362839899999415,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "round": 1,
+      "seconds": 0.048497583999960625,
+      "cpu_seconds": 0.04363442900000081,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "none",
+      "round": 3,
+      "seconds": 0.3800816799994209,
+      "cpu_seconds": 0.07125701600000411,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "round": 4,
+      "seconds": 0.38520202499967127,
+      "cpu_seconds": 0.21097352900000033,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "gzip",
+      "round": 2,
+      "seconds": 0.06583233399942401,
+      "cpu_seconds": 0.06960608600000029,
+      "http_plaintext_bytes": 628873,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "round": 1,
+      "seconds": 0.18287856400002056,
+      "cpu_seconds": 0.10392686400000173,
+      "http_plaintext_bytes": 534606,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 531851,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "round": 1,
+      "seconds": 0.1630250950001937,
+      "cpu_seconds": 0.10875454399999995,
+      "http_plaintext_bytes": 394810,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 392055,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "round": 0,
+      "seconds": 0.11830579599973134,
+      "cpu_seconds": 0.11613590099999982,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "round": 4,
+      "seconds": 0.4271154719999686,
+      "cpu_seconds": 0.11164113199999548,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "round": 4,
+      "seconds": 0.15568179599995347,
+      "cpu_seconds": 0.07353534500000336,
+      "http_plaintext_bytes": 534606,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 531851,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "round": 3,
+      "seconds": 0.1730254240001159,
+      "cpu_seconds": 0.09896430900000297,
+      "http_plaintext_bytes": 534606,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 531851,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "none",
+      "round": 1,
+      "seconds": 0.04226682499938761,
+      "cpu_seconds": 0.03396789699999658,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "round": 2,
+      "seconds": 0.059506956999939575,
+      "cpu_seconds": 0.061571319999998764,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "none",
+      "round": 1,
+      "seconds": 0.0532594500000414,
+      "cpu_seconds": 0.046758531999998354,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "round": 2,
+      "seconds": 0.20027879600002052,
+      "cpu_seconds": 0.19972363200000132,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "after-fixed-zlib",
+      "round": 4,
+      "seconds": 0.11884909900072671,
+      "cpu_seconds": 0.12278630899999854,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "none",
+      "round": 0,
+      "seconds": 0.041067901000133133,
+      "cpu_seconds": 0.03481587199999581,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "round": 4,
+      "seconds": 0.237883146999593,
+      "cpu_seconds": 0.23826527399999975,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "gzip",
+      "round": 0,
+      "seconds": 0.2028436110003895,
+      "cpu_seconds": 0.1930292880000053,
+      "http_plaintext_bytes": 2100551,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "round": 0,
+      "seconds": 0.17369867700017494,
+      "cpu_seconds": 0.12132684200000199,
+      "http_plaintext_bytes": 394810,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 392055,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "gzip",
+      "round": 3,
+      "seconds": 0.4299535130003278,
+      "cpu_seconds": 0.15768504699999397,
+      "http_plaintext_bytes": 1899733,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "round": 4,
+      "seconds": 0.06210362899946631,
+      "cpu_seconds": 0.060179006000005586,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "round": 1,
+      "seconds": 0.061947827999574656,
+      "cpu_seconds": 0.048754903000002514,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "round": 3,
+      "seconds": 0.2311883279999165,
+      "cpu_seconds": 0.15961607999999927,
+      "http_plaintext_bytes": 501251,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 498496,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "round": 3,
+      "seconds": 0.4432017339995582,
+      "cpu_seconds": 0.12419605900000619,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "gzip",
+      "round": 1,
+      "seconds": 0.10850875699998141,
+      "cpu_seconds": 0.11365973799999551,
+      "http_plaintext_bytes": 628873,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "gzip",
+      "round": 4,
+      "seconds": 0.06377719099964452,
+      "cpu_seconds": 0.06564877899999999,
+      "http_plaintext_bytes": 628873,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "round": 2,
+      "seconds": 0.2899076099993181,
+      "cpu_seconds": 0.11841425900000502,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "round": 1,
+      "seconds": 0.38068106999980955,
+      "cpu_seconds": 0.07121751600000437,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "gzip",
+      "round": 3,
+      "seconds": 0.15171890100009477,
+      "cpu_seconds": 0.15932575200000088,
+      "http_plaintext_bytes": 1899733,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "gzip",
+      "round": 1,
+      "seconds": 0.311093773999346,
+      "cpu_seconds": 0.3105380499999981,
+      "http_plaintext_bytes": 1899733,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "round": 1,
+      "seconds": 0.3728895330004889,
+      "cpu_seconds": 0.061108787999998526,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "round": 4,
+      "seconds": 0.28334731700033444,
+      "cpu_seconds": 0.10924673199999546,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "none",
+      "round": 4,
+      "seconds": 0.37135134799973457,
+      "cpu_seconds": 0.06147179500000277,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "round": 2,
+      "seconds": 0.43895065400010935,
+      "cpu_seconds": 0.11868498500000157,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "round": 1,
+      "seconds": 0.29184234399963316,
+      "cpu_seconds": 0.11843117600000141,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "round": 4,
+      "seconds": 0.06552525799997966,
+      "cpu_seconds": 0.05875460500000429,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "round": 3,
+      "seconds": 0.05425462899984268,
+      "cpu_seconds": 0.049410342000001606,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "round": 3,
+      "seconds": 0.054035625999858894,
+      "cpu_seconds": 0.04626563900000491,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "round": 1,
+      "seconds": 0.4516960429991741,
+      "cpu_seconds": 0.14964942099999945,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "round": 1,
+      "seconds": 0.27557450299991615,
+      "cpu_seconds": 0.10215596300000129,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "round": 1,
+      "seconds": 0.10763941899949714,
+      "cpu_seconds": 0.10669256399999938,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "round": 2,
+      "seconds": 0.3865443980002965,
+      "cpu_seconds": 0.07115689800000524,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "round": 4,
+      "seconds": 0.40198228400004155,
+      "cpu_seconds": 0.10390662600000411,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "round": 0,
+      "seconds": 0.44504707800024335,
+      "cpu_seconds": 0.1293870080000019,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "round": 0,
+      "seconds": 0.2994398769997133,
+      "cpu_seconds": 0.12094327299999463,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "none",
+      "round": 4,
+      "seconds": 0.03929909199996473,
+      "cpu_seconds": 0.03386752000000115,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "none",
+      "round": 4,
+      "seconds": 0.039480189000641985,
+      "cpu_seconds": 0.03647034699999807,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "round": 2,
+      "seconds": 0.18443829199986794,
+      "cpu_seconds": 0.17623331299999734,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "gzip",
+      "round": 3,
+      "seconds": 0.16111151099994458,
+      "cpu_seconds": 0.07530197300000196,
+      "http_plaintext_bytes": 628873,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "round": 3,
+      "seconds": 0.27071286200043687,
+      "cpu_seconds": 0.09732783800000533,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "round": 0,
+      "seconds": 0.05200596899976517,
+      "cpu_seconds": 0.04587904399999587,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "gzip",
+      "round": 2,
+      "seconds": 0.5759284959995057,
+      "cpu_seconds": 0.3026315480000008,
+      "http_plaintext_bytes": 1899733,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "gzip",
+      "round": 0,
+      "seconds": 0.21735577900017233,
+      "cpu_seconds": 0.1325122599999986,
+      "http_plaintext_bytes": 628873,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "after-fixed-zlib",
+      "round": 2,
+      "seconds": 0.2792916200005493,
+      "cpu_seconds": 0.11025812399999779,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "round": 4,
+      "seconds": 0.06186166899988166,
+      "cpu_seconds": 0.06196644300000287,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "round": 3,
+      "seconds": 0.27504197799953545,
+      "cpu_seconds": 0.10290422799999988,
+      "http_plaintext_bytes": 1159191,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1156436,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "none",
+      "round": 0,
+      "seconds": 0.35756604299967876,
+      "cpu_seconds": 0.042519568000003005,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "round": 0,
+      "seconds": 0.15299140100069053,
+      "cpu_seconds": 0.06723914099999462,
+      "http_plaintext_bytes": 582756,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 580001,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "round": 1,
+      "seconds": 0.04713147500024206,
+      "cpu_seconds": 0.04030255600000032,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "round": 3,
+      "seconds": 0.11370503600028314,
+      "cpu_seconds": 0.10895216200000135,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "gzip",
+      "round": 3,
+      "seconds": 0.10420440599955327,
+      "cpu_seconds": 0.0968024399999976,
+      "http_plaintext_bytes": 2100551,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "round": 2,
+      "seconds": 0.3723933279998164,
+      "cpu_seconds": 0.05242679199999856,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "gzip",
+      "round": 4,
+      "seconds": 0.15275823299998592,
+      "cpu_seconds": 0.06756900199999905,
+      "http_plaintext_bytes": 628873,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "round": 1,
+      "seconds": 0.051282870000250114,
+      "cpu_seconds": 0.044486267999999995,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 1000,
+      "method": "before-fixed-zlib",
+      "round": 2,
+      "seconds": 0.12900217900005373,
+      "cpu_seconds": 0.12089258700000016,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "gzip",
+      "round": 1,
+      "seconds": 0.5354815270002291,
+      "cpu_seconds": 0.22198209300000116,
+      "http_plaintext_bytes": 2100551,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 1000,
+      "method": "none",
+      "round": 1,
+      "seconds": 0.04614550400037842,
+      "cpu_seconds": 0.035119757000003915,
+      "http_plaintext_bytes": 2099811,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 0,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "before-fixed-zlib",
+      "round": 1,
+      "seconds": 0.3120535190000737,
+      "cpu_seconds": 0.1317235130000043,
+      "http_plaintext_bytes": 1196521,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 1193766,
+        "recipe_searches": 0,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "round": 2,
+      "seconds": 0.05552345000069181,
+      "cpu_seconds": 0.04832629500000252,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "before-adaptive",
+      "round": 4,
+      "seconds": 0.04705881900008535,
+      "cpu_seconds": 0.03850193199999552,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "stdlib",
+      "mbps": 50,
+      "method": "before-adaptive",
+      "round": 2,
+      "seconds": 0.14175172799969005,
+      "cpu_seconds": 0.06360304899999392,
+      "http_plaintext_bytes": 534606,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 531851,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "float32",
+      "mbps": 1000,
+      "method": "after-adaptive",
+      "round": 1,
+      "seconds": 0.0704726309995749,
+      "cpu_seconds": 0.06848742799999741,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    },
+    {
+      "dataset": "random",
+      "mbps": 50,
+      "method": "after-adaptive",
+      "round": 0,
+      "seconds": 0.4065025150002839,
+      "cpu_seconds": 0.09908927000000034,
+      "http_plaintext_bytes": 2100153,
+      "server_metrics": {
+        "file_payload_bytes": 2097152,
+        "file_requests": 2,
+        "block_wire_bytes": 2097398,
+        "recipe_searches": 1,
+        "recipe_reused_blocks": 0
+      }
+    }
+  ]
+}

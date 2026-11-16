@@ -1,0 +1,12 @@
+Processing ./.
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: ultratransfert
+  Building wheel for ultratransfert (pyproject.toml): started
+  Building wheel for ultratransfert (pyproject.toml): finished with status 'done'
+  Created wheel for ultratransfert: filename=ultratransfert-0.4.2-py3-none-any.whl size=68585 sha256=76a88a77e27c5436b677c31c5ffa473486de279ace79697d9bca0249849c5860
+  Stored in directory: /tmp/pip-ephem-wheel-cache-0k0wp75j/wheels/7e/ec/8a/c302c710101c84b42f94790e8dc8d8162ea7a5cf3bbf836059
+Successfully built ultratransfert
+
+[notice] A new release of pip is available: 26.2.2 -> 26.3
+[notice] To update, run: pip install --upgrade pip

@@ -1,6 +1,13 @@
 # Passer des sources à une version Windows vérifiée
 
-## État réel de cette livraison 0.4.1
+## État réel des sources 0.4.2
+
+La 0.4.2 modifie l'extraction des buffers Zstandard et la préparation des trames
+prédictives sans changer les formats. Elle a été contrôlée sous Linux ; aucun
+nouveau succès Windows n'est encore enregistré pour ces octets. Le dernier
+installateur validé sur Windows Server 2022/2025 reste la 0.4.1 au commit
+`f95b0023fc2fd0bd187e09c0a4dac3e6a01cdd53` :
+https://github.com/mmxb8/UltraTransfert/actions/runs/43844226030.
 
 Le prototype R2.2 (sélection prédictive) et le lecteur R3.1 sont désormais inclus
 comme modules du programme et dans le nouvel installateur, en option explicite.
@@ -35,7 +42,7 @@ une version et aucun serveur RDP n’est ouvert. Un statut vert ne prouve pas un
 rendu visuel correct, Windows 10/11, SmartScreen après téléchargement, ou RDP.
 Les runners choisis utilisent Windows Server, pas Windows client.
 
-Le dépôt public dédié est `maher8-git/UltraTransfert`. Le workflow se lance
+Le dépôt public dédié est `mmxb8/UltraTransfert`. Le workflow se lance
 sur les nouveaux commits de `main`, ou manuellement dans Actions. Son état
 et ses artefacts constituent la preuve de chaque exécution : ne pas déduire
 une validation Windows de la seule présence de ce fichier. Les tests RDP
@@ -66,7 +73,7 @@ copie via lecteur redirigé ne constitue pas un canal RDP propriétaire.
 Dans la VM Windows propre, le script développeur peut aussi être lancé :
 
 ```powershell
-./installer/Valider_Windows.ps1 -Installer ./UltraTransfert-0.4.1-Setup-x64-beta.exe -Rapport ./windows.json -ScannerDefender -RequireDefender
+./installer/Valider_Windows.ps1 -Installer ./UltraTransfert-0.4.2-Setup-x64-beta.exe -Rapport ./windows.json -ScannerDefender -RequireDefender
 ```
 
 Il refuse une installation préexistante et conserve les diagnostics en cas

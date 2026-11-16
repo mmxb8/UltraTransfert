@@ -1,0 +1,16 @@
+[
+  {
+    "revision": "R4.0",
+    "seconds": 0.1566987389996939,
+    "cpu_seconds": 0.15669474500000002,
+    "peak_python_bytes": 67687973,
+    "max_rss_kib": 81808
+  },
+  {
+    "revision": "R4.1",
+    "seconds": 0.12404048299868009,
+    "cpu_seconds": 0.122938477,
+    "peak_python_bytes": 42432869,
+    "max_rss_kib": 57212
+  }
+]

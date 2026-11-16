@@ -1,40 +1,38 @@
-# UltraTransfert — démarrage rapide
+# Installer et copier — UltraTransfert 0.4.1 bêta
 
-Cette livraison contient désormais un véritable installateur Windows x64 bêta non signé, compilé sous Linux et encore non validé sur Windows. Ouvrir dist/UltraTransfert-0.4.0-Setup-x64-beta.exe, puis utiliser le raccourci Démarrer. Aucun Python utilisateur ou accès Internet n’est requis pour cette installation. Ne désactiver aucune protection si Windows bloque le fichier.
+1. Ouvrir **UltraTransfert-0.4.1-Setup-x64-beta.exe** puis suivre l’assistant.
+2. Ouvrir **UltraTransfert** depuis le menu Démarrer.
+3. Choisir le dossier source et une destination vide.
+4. Cliquer **Copier / reprendre**. Attendre **Copie terminée et vérifiée**.
 
-Les étapes ci-dessous concernent uniquement les anciens lanceurs depuis les sources ; elles ne sont pas nécessaires avec l’installateur.
+Aucun Python à installer, aucune commande à saisir. Les réglages automatiques
+conviennent pour commencer.
 
-1. Extraire tout le ZIP.
-2. Sous Windows, ouvrir Installer_Windows.bat, puis Lancer_UltraTransfert.bat. Python/tkinter est requis. Si déjà présent et sans réseau : ouvrir Installer_sans_Internet.bat. Un complément manquant ne bloque plus les copies ; les scripts restent à tester sous Windows.
-3. Choisir le dossier à copier et un dossier destination vide.
-4. Cliquer sur Copier / reprendre. Attendre « Copie terminée et vérifiée », puis Ouvrir la destination pour retrouver les fichiers.
+Pour interrompre, cliquer **Interrompre** et attendre la confirmation.
+Pour reprendre, conserver les mêmes dossiers puis cliquer **Copier / reprendre**.
+Conserver le dossier de reprise caché dans la destination. Un fichier différent
+déjà présent n’est jamais écrasé.
 
-Voir le bilan : affiche le résultat de cette tentative, sans relire le disque réseau. Ce n’est pas une nouvelle vérification. Le résumé disparaît à la fermeture ; le rapport technique reste dans la destination.
+Pour deux ordinateurs : **Émettre en HTTPS…** prépare la connexion, puis
+**Partager ce dossier** démarre le partage choisi. Transmettre l’invitation
+secrète au destinataire ; celui-ci utilise **Recevoir en HTTPS**. Comparer
+l’adresse et l’empreinte avec l’émetteur. Cliquer **Arrêter le partage** à la fin.
 
-Petit écran : faites défiler la fenêtre principale avec la barre verticale ou la molette pour atteindre les commandes. Tab permet de passer au contrôle suivant et de l’amener dans la zone visible.
+L’installateur fourni provient du commit f95b002, exécution :
+https://github.com/mmxb8/UltraTransfert/actions/runs/43844226030
+SHA-256 : 01349c32f77356b0e42062eaa7910ca0f5d4adaf9a3d66e6e1ff1382e41ae835
 
-Pour arrêter, y compris pendant l’inventaire local : Interrompre, puis attendre le résultat. Un lecteur lent peut retarder cet arrêt. Pour continuer : Reprendre avec les mêmes dossiers. Ne pas supprimer le dossier .ultratransfert-state.
+Installation, copie/reprise, TLS prédictif, réinstallation et désinstallation
+testées sur Windows Server 2022 et 2025. Defender a scanné ces octets et les
+fichiers installés sans détection dans ces deux rapports du 16 novembre 2026.
+Ces observations ne garantissent pas l’absence d’alertes sur un autre poste.
 
-Relancer la préparation : si le complément HTTPS attendu est déjà présent et fonctionne, il est réutilisé sans téléchargement. Sinon, la préparation tente de l’ajouter ; son échec laisse les copies disponibles.
+**Bêta non signée.** Windows 10/11, SmartScreen après téléchargement et RDP réel
+restent à tester. Ne pas désactiver les protections si Windows bloque le fichier.
 
-Pendant la vérification finale, Interrompre laisse la copie incomplète. Reprendre avec les mêmes dossiers effectue les contrôles avant d’annoncer la réussite, même si les fichiers sont déjà présents.
+Pour RDP : seuls les lecteurs redirigés autorisés peuvent être choisis comme
+dossiers ; le canal virtuel natif et la reprise entre transports ne sont pas
+livrés. Les ACL, flux NTFS et attributs étendus ne sont pas copiés.
 
-En cas d'erreur, suivre l'action indiquée. Aucun fichier différent n'est écrasé. Les flux NTFS alternatifs et les droits ACL ne sont pas copiés.
-
-RDP : un lecteur redirigé autorisé peut être sélectionné comme dossier. Cette possibilité reste à tester sur Windows ; le canal RDP natif n'est pas livré.
-
-Préparation du futur portable sans Python utilisateur : voir CONSTRUCTION_WINDOWS.md. Le fichier PORTABLE_UTILISATEUR.txt est destiné à ce futur paquet construit sur Windows ; l’archive source actuelle ne contient pas cet EXE.
-
-Recevoir depuis un autre ordinateur : Recevoir en HTTPS → Ouvrir une invitation → comparer l’adresse/empreinte avec l’émetteur → choisir la destination → Copier / reprendre. Le fichier d’invitation est secret ; la préparation côté émetteur reste décrite dans INVITATIONS_HTTPS.md.
-
-Préparer les fichiers côté émetteur : Émettre en HTTPS… → adresse du poste → dossier personnel hors des données à partager. Le logiciel crée certificat et accès secret sans démarrer de serveur. Choisir ensuite le dossier et Partager ce dossier ; utiliser Arrêter le partage à la fin. Voir PARTAGE_HTTPS.md.
-
-Après fermeture de l’émetteur : Émettre en HTTPS… → Charger une connexion existante… → choisir le dossier privé conservé → choisir la source → Partager ce dossier. Le destinataire garde son invitation et sa destination, puis Copier / reprendre.
-
-En cas d’échec d’ouverture de l’interface : suivre le message « lancement impossible ». Un diagnostic est tenté dans le dossier personnel (Windows : %LOCALAPPDATA%\UltraTransfert\diagnostics). Si aucun message n’apparaît, vérifier l’extraction complète et relancer la préparation. Ce mécanisme ne couvre pas un interpréteur ou un bootloader absent. Relire le journal avant de le transmettre ; les diagnostics peuvent être supprimés après fermeture de l’application.
-
-Pendant l’inventaire/hachage au démarrage du partage, Annuler la préparation demande un arrêt. Attendre la confirmation ; une opération disque engagée peut prendre du temps. Fermer ce dialogue attend aussi cette confirmation. La connexion conservée reste utilisable pour recommencer.
-
-Pour ralentir volontairement une copie : Réglages avancés → Vitesse maximale de copie → choisir une valeur. Sans limite reste le défaut. Pour changer pendant une copie : Interrompre, attendre, modifier puis Reprendre. Il s’agit de contenu logique ; les vérifications et pointes de trafic ne sont pas plafonnées. Aucune réactivité RDP n’est garantie.
-
-Les petits fichiers HTTPS réutilisent automatiquement les connexions autorisées, avec ou sans compression. Aucun nouveau réglage. Après une coupure réseau : attendre le résultat, puis Reprendre avec les mêmes dossiers.
+La recherche R4.3 est séparée de cet installateur ; aucune option supplémentaire
+n’est à choisir pour l’utiliser.

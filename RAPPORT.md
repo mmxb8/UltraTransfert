@@ -1,3 +1,72 @@
+# Checkpoint R4.3 — 16 novembre 2026 (programme 0.4.1 inchangé)
+
+Recherche petits fichiers : index de restitution avec vérification des records
+complets, préparation par groupes et fichier temporaire privé facultatif.
+301 tests Linux, 580 copies TLS de comparaison et 36 exploratoires ; deux
+campagnes mémoire de 56 préparations de 32 Mio vérifiées indépendamment.
+Pic Python du producteur brut 37,2 → 4,5 Mio ; coût I/O supplémentaire du spool
+conservé dans les résultats. Ce microbanc n'est pas un gain de transfert.
+Les campagnes complètes gardent les régressions et comparent aussi tar/ZIP.
+Voir reports/bundle-r43-decision.md et REPRISE_R43.md.
+
+Aucun changement du moteur/EXE : mêmes octets testés sous Windows Server au
+commit f95b002. Le laboratoire n'est pas embarqué dans cet EXE. Bêta non signée,
+Windows 10/11, SmartScreen et RDP réel restent non validés.
+Aucun push nouveau : le contrôle de droits du connecteur maher8-git sur mmxb8
+répond 403. Sources et série de commits en attente conservées dans l'archive.
+
+---
+
+# Checkpoint R4.2 — 16 novembre 2026 (application 0.4.1)
+
+Réconciliation avec main f95b002 et l'archive version 28 / recherche R4.1.
+Moteur Windows, test d'identité des fichiers et script PowerShell corrigés conservés.
+
+Manifeste compressé borné facultatif UTSB2, lecture des anciens UTSB1 conservée.
+300 copies TLS finales + 144 exploratoires ; huit nouveaux tests de manifeste.
+La baisse des octets ne prouve pas un gain régulier du temps complet : le laboratoire
+reste séparé du produit. Mesures, coûts et régressions : reports/bundle-r42-decision.md.
+
+Le paquet fournit désormais l'EXE exact testé au commit f95b002 sur Windows Server
+2022 et 2025 : SHA-256 01349c32f77356b0e42062eaa7910ca0f5d4adaf9a3d66e6e1ff1382e41ae835.
+Deux rapports joints : Defender a scanné installateur + payload, sans détection.
+Bêta non signée ; Windows 10/11, SmartScreen et RDP réel restent non validés.
+Les affirmations plus anciennes ci-dessous décrivent leurs EXE historiques.
+Le guide d'installation est simplifié à quatre étapes sans terminal.
+
+GitHub est lisible, mais le connecteur reste maher8-git (droits mmxb8 : 403)
+et le navigateur est déconnecté. Les modifications sont enregistrées en commit
+local et patch réapplicable ; aucun push ni nouvelle exécution Windows n'est annoncé.
+Ne pas revenir sur l'ancienne origine. Voir REPRISE_R42.md pour la suite.
+
+---
+
+# Checkpoint R4.1 — petits fichiers regroupés (programme 0.4.1 conservé)
+
+16 novembre 2026. 285 tests Linux réussis avec cryptography 50.0.2, compilation
+Python et C++ réussie. 680 copies TLS finales vérifiées, plus 180 copies
+exploratoires non retenues pour les gains. Dossier mixte distinct, vrais fichiers
+Python locaux, JSON apparenté et données déjà gzip ; inventaires et SHA-256
+indépendants. 14 nouveaux tests de regroupement couvrent aussi interruption et
+reprise HTTPS du conteneur, restitution interrompue, corruption, bornes, liens,
+conflits et espace insuffisant simulé.
+
+R4.1 réduit de 37,3 % le pic mémoire Python et de 30,1 % le pic RSS du microbanc
+de restitution de 32 Mio face à R4.0. Le regroupement bat plusieurs transferts
+fichier par fichier, mais les références standard tar/ZIP restent plus rapides
+sur toutes les cellules comparées : aucune promotion dans le produit. Les
+références standard n’ont pas le même journal/reprise/publication temporaire
+par fichier ; cette limite est explicitée et aucun contrôle candidat n’est retiré.
+
+Voir RECHERCHE_GROUPES_R4.md, reports/bundle-r4-summary.md et
+reports/bundle-r4-decision.md pour tous les chiffres, limites et point de reprise.
+Le README et le démarrage rapide indiquent désormais l’installateur 0.4.1 actuel.
+L’EXE 0.4.1 existant est conservé octet pour octet, toujours bêta non signé et
+non validé sur Windows/RDP réel. Le R2.2/R3.1 intégré reste facultatif ; ce nouveau
+laboratoire est séparé et sans négociation de production. MIT et dons inchangés.
+
+---
+
 # Checkpoint recherche R3.1 (application 0.4.0 inchangée)
 
 Lecteur expérimental : moins de copies mémoire, même grammaire et vérifications. Pic Python du microbanc UTCP1 réduit de 47 % ; gain HTTPS fixe modeste sur un cas, régressions conservées. 266 tests Linux, 1 332 copies de comparaison et stress TLS 1 Gio/514 fichiers avec reprise vérifiés. Les variations de recettes adaptatives empêchent d'attribuer leurs gains au lecteur seul. Voir RECHERCHE_LECTURE_R3.md et reports/reader-r3-summary.md. Aucune intégration au moteur ou à l'installateur.
