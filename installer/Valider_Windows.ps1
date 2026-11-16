@@ -41,7 +41,25 @@ try {
     }
     $process = Start-Process -FilePath $setup -ArgumentList '/S' -Wait -PassThru
     $result.install_exit = $process.ExitCode
-    if ($process.ExitCode -ne 0) { throw 'Installation échouée.' }
+    if ($process.ExitCode -ne 0) {
+        $evidence = Split-Path -Parent $Rapport
+        $extracted = Join-Path $temporary 'extracted-installer'
+        $sevenZip = Join-Path $env:ProgramFiles '7-Zip\7z.exe'
+        if (Test-Path -LiteralPath $sevenZip) {
+            & $sevenZip x ('-o' + $extracted) $setup | Out-Null
+            if ($LASTEXITCODE -eq 0) {
+                $entryDiagnostic = @(Get-ChildItem -LiteralPath $extracted -Filter installed_entry.py -Recurse)[0]
+                if ($entryDiagnostic) {
+                    $pythonDiagnostic = Join-Path $entryDiagnostic.DirectoryName 'runtime\python.exe'
+                    & $pythonDiagnostic $entryDiagnostic.FullName '--install-check' (Join-Path $evidence 'install-check.json') 2>&1 | Tee-Object -FilePath (Join-Path $evidence 'install-check-output.txt')
+                    Write-Output ('Diagnostic runtime exit: ' + $LASTEXITCODE)
+                    $diagnosticJson = Join-Path $evidence 'install-check.json'
+                    if (Test-Path -LiteralPath $diagnosticJson) { Get-Content -LiteralPath $diagnosticJson -Raw }
+                }
+            }
+        }
+        throw ('Installation echouee, code ' + $process.ExitCode)
+    }
     $installed = Join-Path $appBase 'app'
     $python = Join-Path $installed 'runtime\python.exe'
     $entry = Join-Path $installed 'installed_entry.py'
